@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "pnpm dlx prettier --write --plugin-search-dir=. .",
-    "check": "pnpm dlx concurrently \"pnpx prettier --check --plugin-search-dir=. .\" \"astro check\" \"tsc --noEmit\""
+    "check": "pnpm dlx concurrently \"pnpm dlx prettier --check --plugin-search-dir=. .\" \"astro check\" \"tsc --noEmit\""
   },
   "dependencies": {
     "@astrojs/mdx": "^0.19.4",
