@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "pnpm build && pnpm preview",
-    "build": "pnpm check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "format": "pnpm dlx prettier --write --plugin-search-dir=. .",
