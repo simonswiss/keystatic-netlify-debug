@@ -1,8 +1,24 @@
 ---
 import BaseLayout from './base.astro'
+import {getEntry} from 'astro:content'
+import { SEO } from 'astro-seo'
+
+const site = await getEntry('site', 'site')
+const { title, description } = Astro.props as {title: string, description: string}
 ---
 <BaseLayout>
-    <main>
+    <Fragment slot="head">
+        <slot name="head" />
+        <SEO 
+            title={title || `${site.data.title} | ${site.data.description}`}
+            description={description || site.data.description}
+        />
+    </Fragment>
+    <main class="container">
         <slot />
     </main>
 </BaseLayout>
+
+<style lang="scss">
+    @use '../../node_modules/@picocss/pico/scss/pico.slim.scss';
+</style>

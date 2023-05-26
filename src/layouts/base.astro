@@ -1,11 +1,11 @@
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
+---
+import Head from '~/components/head.astro'
+---
+
+<html lang="id">
+	<Head>
+		<slot name="head" />
+	</Head>
 	<body>
 		<slot />
 	</body>

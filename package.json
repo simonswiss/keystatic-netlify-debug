@@ -10,6 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.4.1"
+    "@picocss/pico": "^1.5.10",
+    "astro": "^2.5.5",
+    "astro-seo": "^0.7.2",
+    "sass": "^1.62.1"
   }
 }
