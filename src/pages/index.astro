@@ -1,8 +1,28 @@
 ---
 import Layout from '~/layouts/layout.astro'
+import { getCollection } from 'astro:content'
+
+const posts = await getCollection('blog')
 ---
 
 <Layout>
-  <h1>Astro</h1>
-  <p><a href={import.meta.env.SITE}>{import.meta.env.SITE}</a></p>
+  <section>
+    {
+      posts.map((post) => {
+        const url = [
+          post.data.date.getFullYear(),
+          post.data.date.getMonth() + 1,
+          post.slug,
+        ].join('/')
+
+        return (
+          <article>
+            <h3>
+              <a href={`/blog/${url}`}>{post.data.title}</a>
+            </h3>
+          </article>
+        )
+      })
+    }
+  </section>
 </Layout>
