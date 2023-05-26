@@ -4,15 +4,20 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
+    "start": "pnpm build && pnpm preview",
+    "build": "pnpm check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "pnpm dlx prettier --write --plugin-search-dir=. .",
+    "check": "pnpm dlx concurrently \"pnpx prettier --check --plugin-search-dir=. .\" \"astro check\" \"tsc --noEmit\""
   },
   "dependencies": {
     "@picocss/pico": "^1.5.10",
     "astro": "^2.5.5",
     "astro-seo": "^0.7.2",
     "sass": "^1.62.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
   }
 }
