@@ -1,28 +1,21 @@
 ---
 import Layout from '~/layouts/layout.astro'
 import { getCollection } from 'astro:content'
+import Post from '~/components/post'
 
 const posts = await getCollection('blog')
 ---
 
 <Layout>
-  <section>
-    {
-      posts.map((post) => {
-        const url = [
-          post.data.date.getFullYear(),
-          post.data.date.getMonth() + 1,
-          post.slug,
-        ].join('/')
-
-        return (
-          <article>
-            <h3>
-              <a href={`/blog/${url}`}>{post.data.title}</a>
-            </h3>
-          </article>
-        )
-      })
-    }
+  <section class="posts">
+    {posts.map((post) => <Post post={post} />)}
   </section>
 </Layout>
+
+<style lang="scss">
+  .posts {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+</style>

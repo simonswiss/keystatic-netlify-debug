@@ -18,8 +18,8 @@ const { title, description } = Astro.props
 
 const profile = await getImage({
   src: site.data.image,
-  width: 35,
-  height: 35,
+  width: 70,
+  height: 70,
 })
 ---
 
@@ -51,5 +51,9 @@ const profile = await getImage({
 
   :root {
     --font-family: 'Red Hat Display Variable', sans-serif !important;
+  }
+
+  body {
+    min-height: 100dvh;
   }
 </style>

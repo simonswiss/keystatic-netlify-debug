@@ -1,0 +1,23 @@
+.excerpt {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  font-size: 1.1rem;
+}
+
+.title,
+.excerpt {
+  --typography-spacing-vertical: 0.75rem;
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+
+  a {
+    border-radius: 5px;
+    background-color: var(--primary-focus);
+    padding: 0.25rem 0.5rem;
+  }
+}
