@@ -6,6 +6,7 @@ import { SEO } from 'astro-seo'
 
 import '@fontsource-variable/red-hat-display'
 
+import Icons from '~/components/icons.astro'
 import Header from '~/components/header'
 
 interface Props {
@@ -30,6 +31,7 @@ const profile = await getImage({
       title={title || `${site.data.title} | ${site.data.description}`}
       description={description || site.data.description}
     />
+    <Icons />
     <slot name="head" />
   </Fragment>
 
