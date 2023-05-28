@@ -1,24 +1,30 @@
 {
   "name": "radenpioneer.blog",
-  "type": "module",
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "start": "pnpm build && pnpm preview",
-    "build": "astro build",
-    "preview": "astro preview",
     "astro": "astro",
+    "build": "astro build",
+    "check": "pnpm dlx concurrently \"pnpm dlx prettier --check --plugin-search-dir=. .\" \"astro check\" \"tsc --noEmit\"",
+    "dev": "astro dev",
     "format": "pnpm dlx prettier --write --plugin-search-dir=. .",
-    "check": "pnpm dlx concurrently \"pnpm dlx prettier --check --plugin-search-dir=. .\" \"astro check\" \"tsc --noEmit\""
+    "preview": "astro preview",
+    "start": "pnpm build && pnpm preview"
   },
   "dependencies": {
     "@astrojs/mdx": "^0.19.4",
+    "@astrojs/react": "^2.2.0",
+    "@fontsource-variable/red-hat-display": "^5.0.2",
     "@picocss/pico": "^1.5.10",
+    "@radix-ui/react-avatar": "^1.0.3",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
     "astro": "^2.5.5",
     "astro-seo": "^0.7.2",
-    "sass": "^1.62.1"
-  },
-  "devDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "sass": "^1.62.1",
+    "sharp": "^0.32.1",
     "typescript": "^5.0.4"
   },
   "packageManager": "pnpm@8.5.1"

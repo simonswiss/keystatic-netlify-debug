@@ -1,2 +1,10 @@
 title: radenpioneer.blog
 description: orang biasa, seperti kamu. iya, kamu.
+image: '~/assets/profile.jpg'
+menu:
+  - title: siapa?
+    href: '/#siapa'
+  - title: catatan
+    href: '/#catatan'
+  - title: karya
+    href: '/#karya'

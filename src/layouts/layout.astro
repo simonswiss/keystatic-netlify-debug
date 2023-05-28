@@ -1,7 +1,12 @@
 ---
 import BaseLayout from './base.astro'
 import { getEntry } from 'astro:content'
+import { getImage } from 'astro:assets'
 import { SEO } from 'astro-seo'
+
+import '@fontsource-variable/red-hat-display'
+
+import Header from '~/components/header'
 
 interface Props {
   title?: string
@@ -10,16 +15,32 @@ interface Props {
 
 const site = await getEntry('site', 'site')
 const { title, description } = Astro.props
+
+const profile = await getImage({
+  src: site.data.image,
+  width: 35,
+  height: 35,
+})
 ---
 
 <BaseLayout>
+  <!-- Head -->
   <Fragment slot="head">
-    <slot name="head" />
     <SEO
       title={title || `${site.data.title} | ${site.data.description}`}
       description={description || site.data.description}
     />
+    <slot name="head" />
   </Fragment>
+
+  <!-- Body -->
+  <Header
+    site={site}
+    imageSrc={profile.src}
+    imageWidth={profile.attributes.width}
+    imageHeight={profile.attributes.height}
+    client:load
+  />
   <main class="container">
     <slot />
   </main>
@@ -27,4 +48,8 @@ const { title, description } = Astro.props
 
 <style lang="scss" is:global>
   @use '../../node_modules/@picocss/pico/scss/pico.slim.scss';
+
+  :root {
+    --font-family: 'Red Hat Display Variable', sans-serif !important;
+  }
 </style>
