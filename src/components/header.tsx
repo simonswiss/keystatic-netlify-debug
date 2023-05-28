@@ -1,6 +1,8 @@
 import type { FC } from 'react'
 import type { CollectionEntry } from 'astro:content'
 import * as RadixAvatar from '@radix-ui/react-avatar'
+import * as RadixDropdownMenu from '@radix-ui/react-dropdown-menu'
+import { HamburgerMenuIcon } from '@radix-ui/react-icons'
 
 import style from '~/styles/header.module.scss'
 import '../../node_modules/@picocss/pico/scss/components/_nav.scss'
@@ -35,6 +37,9 @@ const Header: FC<{
               <a href={item?.href}>{item?.title}</a>
             </li>
           ))}
+          <li>
+            <MobileMenu site={site} />
+          </li>
         </ul>
       </nav>
     </header>
@@ -56,5 +61,31 @@ const Profile: FC<{
         {alt.slice(0, 2)}
       </RadixAvatar.Fallback>
     </RadixAvatar.Root>
+  )
+}
+
+const MobileMenu: FC<{ site: CollectionEntry<'site'> }> = ({ site }) => {
+  return (
+    <RadixDropdownMenu.Root>
+      {/* Menu Button */}
+      <RadixDropdownMenu.Trigger asChild>
+        <button className={style.menu__btn}>
+          <HamburgerMenuIcon className={style.menu__btn__icon} />
+        </button>
+      </RadixDropdownMenu.Trigger>
+
+      {/* Menu Content */}
+      <RadixDropdownMenu.Portal>
+        <RadixDropdownMenu.Content className={style.menu__mobile}>
+          {site.data.menu.map((item, i) => (
+            <RadixDropdownMenu.Item key={i} asChild>
+              <a className={style.menu__mobile__item} href={item?.href}>
+                {item?.title}
+              </a>
+            </RadixDropdownMenu.Item>
+          ))}
+        </RadixDropdownMenu.Content>
+      </RadixDropdownMenu.Portal>
+    </RadixDropdownMenu.Root>
   )
 }
