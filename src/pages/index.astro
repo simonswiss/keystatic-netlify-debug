@@ -8,7 +8,11 @@ const posts = await getCollection('blog')
 
 <Layout>
   <section class="posts">
-    {posts.map((post) => <Post post={post} />)}
+    {
+      posts
+        .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+        .map((post) => <Post post={post} />)
+    }
   </section>
 </Layout>
 
