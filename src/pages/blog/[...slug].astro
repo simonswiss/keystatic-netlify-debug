@@ -27,7 +27,12 @@ const { post } = Astro.props
 const { Content } = await post.render()
 ---
 
-<Layout title={`${post.data.title} | ${site.data.title}`}>
+<Layout
+  title={`${post.data.title} | ${site.data.title}`}
+  description={post.body.match(
+    /^(?!#|!|(?:<[^>]*>|&lt;[^&]*&gt;).*$|\s*$).*/m
+  )?.[0] as string}
+>
   <article>
     <h1>{post.data.title}</h1>
     <Content />

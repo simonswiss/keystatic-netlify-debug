@@ -14,7 +14,9 @@ const Post: FC<{ post: CollectionEntry<'blog'> }> = ({ post }) => {
       <h2 className={style.title}>
         <a href={`/blog/${url}`}>{post.data.title}</a>
       </h2>
-      <p className={style.excerpt}>{post.body}</p>
+      <p className={style.excerpt}>
+        {post.body.match(/^(?!#|!|(?:<[^>]*>|&lt;[^&]*&gt;).*$|\s*$).*/m)?.[0]}
+      </p>
       <div className={style.tags}>
         <a href={`/blog/${url}`}>
           {post.data.date.toLocaleDateString('id-ID', {
