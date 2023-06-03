@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const getStaticPaths = async () => {
-  const blogPosts = await getCollection('blog', ({ data }) => !data.note)
+  const blogPosts = await getCollection('blog', ({ data }) => data.note)
 
   return blogPosts.map((post) => ({
     params: {
