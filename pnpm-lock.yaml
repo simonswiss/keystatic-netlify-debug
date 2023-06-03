@@ -14,9 +14,9 @@ dependencies:
   '@astrojs/sitemap':
     specifier: 1.3.1
     version: 1.3.1
-  '@fontsource-variable/red-hat-display':
-    specifier: 5.0.2
-    version: 5.0.2
+  '@fontsource-variable/plus-jakarta-sans':
+    specifier: ^5.0.3
+    version: 5.0.3
   '@picocss/pico':
     specifier: 1.5.10
     version: 1.5.10
@@ -669,8 +669,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@fontsource-variable/red-hat-display@5.0.2:
-    resolution: {integrity: sha512-dvATCT8BN+4dkQTe2BJoblQDOuM+wVCdgYORN1D0JU7uj+G9sgnIfaimWwbF4PPVdFw+jJ9z3sSukJxgD4mNjw==}
+  /@fontsource-variable/plus-jakarta-sans@5.0.3:
+    resolution: {integrity: sha512-nWstMfb0b2xIdvWflCET3WyUc0YvGwMAFxQSFS7FLbPjkoP+UFvtLEbuQBNerjql6IzEr+VbUtHUUyVR49ewEw==}
     dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
