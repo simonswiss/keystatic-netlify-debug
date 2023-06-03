@@ -1,25 +1,8 @@
 ---
-import Layout from '~/layouts/layout.astro'
+import List from '~/layouts/list.astro'
 import { getCollection } from 'astro:content'
-import Post from '~/components/post'
 
-const posts = await getCollection('blog')
+const posts = await getCollection('blog', ({ data }) => !data.note)
 ---
 
-<Layout>
-  <section class="posts">
-    {
-      posts
-        .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-        .map((post) => <Post post={post} />)
-    }
-  </section>
-</Layout>
-
-<style lang="scss">
-  .posts {
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
-  }
-</style>
+<List posts={posts} />

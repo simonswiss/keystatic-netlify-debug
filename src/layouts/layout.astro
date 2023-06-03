@@ -28,7 +28,9 @@ const profile = await getImage({
   <!-- Head -->
   <Fragment slot="head">
     <SEO
-      title={title || `${site.data.title} | ${site.data.description}`}
+      title={title
+        ? `${title} | ${site.data.title}`
+        : `${site.data.title} | ${site.data.description}`}
       description={description || site.data.description}
     />
     <Icons />

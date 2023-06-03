@@ -5,6 +5,6 @@ menu:
   - title: siapa?
     href: '/siapa'
   - title: catatan
-    href: '#/catatan'
+    href: '/note'
   - title: karya
     href: '/karya'
