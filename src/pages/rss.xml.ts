@@ -1,13 +1,13 @@
 import rss from '@astrojs/rss'
 import { getEntry, getCollection } from 'astro:content'
 
-const site = await getEntry('site', 'site')
-const entries = await getCollection('blog')
-
 const getPostUrl = (path: string, date: Date, slug: string) =>
   [path, date.getFullYear(), date.getMonth() + 1, slug].join('/')
 
-export const get = async () =>
+export const get = async () => {
+  const site = await getEntry('site', 'site')
+  const entries = await getCollection('blog')
+
   rss({
     title: site.data.title,
     description: site.data.description,
@@ -26,5 +26,6 @@ export const get = async () =>
       ),
     })),
   })
+}
 
 export const prerender = false
