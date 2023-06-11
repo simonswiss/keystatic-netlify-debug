@@ -8,7 +8,7 @@ export const get = async () => {
   const site = await getEntry('site', 'site')
   const entries = await getCollection('blog')
 
-  rss({
+  return rss({
     title: site.data.title,
     description: site.data.description,
     site: import.meta.env.SITE,
