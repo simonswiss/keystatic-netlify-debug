@@ -1,8 +1,9 @@
 import { defineConfig, sharpImageService } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
-
 import sitemap from '@astrojs/sitemap'
+
+import netlify from '@astrojs/netlify/functions'
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,4 +16,6 @@ export default defineConfig({
   image: {
     service: sharpImageService(),
   },
+  output: 'hybrid',
+  adapter: netlify(),
 })
