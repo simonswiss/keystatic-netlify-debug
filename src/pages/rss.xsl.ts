@@ -7,4 +7,4 @@ export const get = async () => ({
   ).then((res) => res.text()),
 })
 
-export const prerender = false
+// export const prerender = false

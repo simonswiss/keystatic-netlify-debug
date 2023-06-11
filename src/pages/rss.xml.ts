@@ -28,4 +28,4 @@ export const get = async () => {
   })
 }
 
-export const prerender = false
+// export const prerender = false
