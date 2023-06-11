@@ -30,8 +30,11 @@ const { title, posts } = Astro.props
 </Layout>
 
 <style lang="scss">
+  @use '../styles/heading';
+
   .title {
-    font-weight: 900;
+    font-weight: 700;
+    @extend %heading;
   }
 
   .posts {

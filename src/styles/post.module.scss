@@ -1,3 +1,9 @@
+@use './heading';
+
+.title {
+  @extend %heading;
+}
+
 .excerpt {
   overflow: hidden;
   display: -webkit-box;

@@ -1,18 +1,17 @@
 ---
 import Layout from './layout.astro'
-import { type CollectionEntry, getEntry } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
 import { Image } from 'astro:assets'
 
 interface Props {
   page: CollectionEntry<'blog'> | CollectionEntry<'page'>
 }
 
-const site = await getEntry('site', 'site')
 const { page } = Astro.props
 ---
 
 <Layout
-  title={`${page.data.title} | ${site.data.title}`}
+  title={page.data.title}
   description={page.data.description ||
     (page.body.match(
       /^(?!#|!|(?:<[^>]*>|&lt;[^&]*&gt;).*$|\s*$).*/m
@@ -37,8 +36,11 @@ const { page } = Astro.props
 </Layout>
 
 <style lang="scss">
+  @use '../styles/heading';
+
   .title {
-    font-weight: 900;
+    font-weight: 700;
+    @extend %heading;
   }
 
   .image {
