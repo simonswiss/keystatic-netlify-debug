@@ -3,8 +3,6 @@ import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
 
-import netlify from '@astrojs/netlify/functions'
-
 // https://astro.build/config
 export default defineConfig({
   site: process.env.NETLIFY ? process.env.URL : 'http://localhost:3000',
@@ -16,6 +14,4 @@ export default defineConfig({
   image: {
     service: sharpImageService(),
   },
-  output: 'hybrid',
-  adapter: netlify(),
 })
