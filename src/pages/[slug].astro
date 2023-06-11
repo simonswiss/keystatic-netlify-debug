@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const getStaticPaths = async () => {
-  const pages = await getCollection('page')
+  const pages = await getCollection('page', ({ data }) => !data.draft)
 
   return pages.map((page) => ({
     params: {

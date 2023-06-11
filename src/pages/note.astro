@@ -2,7 +2,10 @@
 import List from '~/layouts/list.astro'
 import { getCollection } from 'astro:content'
 
-const posts = await getCollection('blog', ({ data }) => data.note)
+const posts = await getCollection(
+  'blog',
+  ({ data }) => data.note && !data.draft
+)
 ---
 
 <List title="Catatan" posts={posts} />
