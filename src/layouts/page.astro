@@ -38,8 +38,6 @@ const { page } = Astro.props
 </Layout>
 
 <style lang="scss">
-  @use '../styles/heading';
-
   .title {
     font-weight: 700;
   }
@@ -50,12 +48,6 @@ const { page } = Astro.props
       width: 100%;
       aspect-ratio: 4/3;
     }
-  }
-
-  :global(p), 
-  :global(ol), 
-  :global(ul) {
-    @extend %serif;
   }
 
   @media (min-width: 576px) {
