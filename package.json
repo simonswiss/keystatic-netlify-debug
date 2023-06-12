@@ -12,7 +12,6 @@
     "start": "pnpm build && pnpm preview"
   },
   "dependencies": {
-    "@astrojs/markdoc": "0.3.3",
     "@astrojs/mdx": "0.19.4",
     "@astrojs/react": "2.2.0",
     "@astrojs/rss": "2.4.3",
