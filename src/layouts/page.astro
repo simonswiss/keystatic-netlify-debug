@@ -25,6 +25,7 @@ const { page } = Astro.props
           <Image
             src={page.data.image}
             width={700}
+            height={525}
             alt={page.data.title}
             loading="eager"
             decoding="async"
@@ -41,14 +42,18 @@ const { page } = Astro.props
 
   .title {
     font-weight: 700;
-    @extend %heading;
   }
 
   .image {
     img {
       object-fit: cover;
       width: 100%;
+      aspect-ratio: 4/3;
     }
+  }
+
+  :global(p) {
+    @extend %serif;
   }
 
   @media (min-width: 576px) {
@@ -56,10 +61,15 @@ const { page } = Astro.props
       font-size: 3.5rem;
     }
 
-    :global(p:not(.image)) {
+    :global(p:not(.image):has(img)) {
+      text-align: center;
+
       :global(img) {
         padding-left: 6rem;
         padding-right: 6rem;
+        max-height: 400px;
+        max-width: max-content;
+        object-fit: contain;
       }
     }
   }
