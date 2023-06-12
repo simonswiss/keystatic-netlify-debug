@@ -23,10 +23,11 @@ const { page } = Astro.props
       page.data.image && (
         <p class="image">
           <Image
-            src={page.data.image.src}
-            width={page.data.image.width}
-            height={page.data.image.height}
+            src={page.data.image}
+            width={700}
             alt={page.data.title}
+            loading="eager"
+            decoding="async"
           />
         </p>
       )
@@ -53,6 +54,13 @@ const { page } = Astro.props
   @media (min-width: 576px) {
     .title {
       font-size: 3.5rem;
+    }
+
+    :global(p:not(.image)) {
+      :global(img) {
+        padding-left: 6rem;
+        padding-right: 6rem;
+      }
     }
   }
 
