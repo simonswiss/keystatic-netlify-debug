@@ -1,18 +1,17 @@
 ---
 import Layout from './layout.astro'
-import { type CollectionEntry, getEntry } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
 import { Image } from 'astro:assets'
 
 interface Props {
   page: CollectionEntry<'blog'> | CollectionEntry<'page'>
 }
 
-const site = await getEntry('site', 'site')
 const { page } = Astro.props
 ---
 
 <Layout
-  title={`${page.data.title} | ${site.data.title}`}
+  title={page.data.title}
   description={page.data.description ||
     (page.body.match(
       /^(?!#|!|(?:<[^>]*>|&lt;[^&]*&gt;).*$|\s*$).*/m
@@ -24,10 +23,12 @@ const { page } = Astro.props
       page.data.image && (
         <p class="image">
           <Image
-            src={page.data.image.src}
-            width={page.data.image.width}
-            height={page.data.image.height}
+            src={page.data.image}
+            width={700}
+            height={525}
             alt={page.data.title}
+            loading="eager"
+            decoding="async"
           />
         </p>
       )
@@ -38,19 +39,32 @@ const { page } = Astro.props
 
 <style lang="scss">
   .title {
-    font-weight: 900;
+    font-weight: 700;
   }
 
   .image {
     img {
       object-fit: cover;
       width: 100%;
+      aspect-ratio: 4/3;
     }
   }
 
   @media (min-width: 576px) {
     .title {
       font-size: 3.5rem;
+    }
+
+    :global(p:not(.image):has(img)) {
+      text-align: center;
+
+      :global(img) {
+        padding-left: 6rem;
+        padding-right: 6rem;
+        max-height: 400px;
+        max-width: max-content;
+        object-fit: contain;
+      }
     }
   }
 

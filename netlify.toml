@@ -1,15 +1,3 @@
 [dev]
   framework = "astro"
   autoLaunch = false
-
-[[redirects]]
-  from = "/open-source/astro-ftp"
-  to = "https://github.com/marketplace/actions/astro-ftp"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/open-source/astro-check"
-  to = "https://github.com/marketplace/actions/astro-check"
-  status = 301
-  force = true

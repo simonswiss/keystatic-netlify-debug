@@ -11,7 +11,7 @@ export const collections = {
     type: 'content',
     schema: ({ image }) =>
       BasicSchema.extend({
-        image: image().optional(),
+        image: image().or(z.string().url()).optional(),
         date: z.date(),
         tags: z.array(z.string()).optional(),
         note: z.boolean().default(false),
@@ -21,7 +21,7 @@ export const collections = {
     type: 'content',
     schema: ({ image }) =>
       BasicSchema.extend({
-        image: image().optional(),
+        image: image().or(z.string().url()).optional(),
       }),
   }),
   site: defineCollection({
@@ -30,7 +30,7 @@ export const collections = {
       z.object({
         title: z.string(),
         description: z.string(),
-        image: image(),
+        image: image().optional(),
         menu: z.array(
           z
             .object({

@@ -69,7 +69,7 @@ const MobileMenu: FC<{ site: CollectionEntry<'site'> }> = ({ site }) => {
     <RadixDropdownMenu.Root>
       {/* Menu Button */}
       <RadixDropdownMenu.Trigger asChild>
-        <button className={style.menu__btn}>
+        <button className={style.menu__btn} title="Menu">
           <HamburgerMenuIcon className={style.menu__btn__icon} />
         </button>
       </RadixDropdownMenu.Trigger>
