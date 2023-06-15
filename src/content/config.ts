@@ -13,6 +13,7 @@ export const collections = {
       BasicSchema.extend({
         image: image().or(z.string().url()).optional(),
         date: z.date(),
+        // tags: z.array(z.object({ title: z.string(), slug: z.string() })).optional(),
         tags: z.array(z.string()).optional(),
         note: z.boolean().default(false),
       }),
@@ -34,8 +35,8 @@ export const collections = {
         menu: z.array(
           z
             .object({
-              title: z.string(),
-              href: z.string(),
+              name: z.string(),
+              slug: z.string(),
             })
             .optional()
         ),

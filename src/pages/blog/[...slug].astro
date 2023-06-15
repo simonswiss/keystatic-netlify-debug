@@ -2,8 +2,6 @@
 import Page from '~/layouts/page.astro'
 import { type CollectionEntry, getCollection } from 'astro:content'
 
-export const prerender = true
-
 interface Props {
   post: CollectionEntry<'blog'>
 }

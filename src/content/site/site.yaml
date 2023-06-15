@@ -1,10 +1,8 @@
 title: radenpioneer.blog
 description: orang biasa, seperti kamu. iya, kamu...
-image: ~/assets/profile.jpg
+image: /src/assets/uploads/site/image.jpg
 menu:
-  - title: siapa?
-    href: /siapa
-  - title: catatan
-    href: /note
-  - title: karya
-    href: /karya
+  - name: Siapa?
+    slug: siapa
+  - name: Catatan
+    slug: catatan

@@ -1,5 +1,20 @@
 ---
+import BaseLayout from '~/layouts/base.astro'
+import { getEntry } from 'astro:content'
+import { SEO } from 'astro-seo'
 import { Keystatic } from '~/keystatic/page'
+
+const site = await getEntry('site', 'site')
+
+export const prerender = false
 ---
 
-<Keystatic client:only />
+<BaseLayout>
+  <Fragment slot="head">
+    <SEO
+      title={`Manajer Konten | ${site.data.title}`}
+      description={site.data.description}
+    />
+  </Fragment>
+  <Keystatic client:only />
+</BaseLayout>
