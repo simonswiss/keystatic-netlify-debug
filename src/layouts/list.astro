@@ -18,7 +18,10 @@ const { title, posts } = Astro.props
       posts.filter((post) => !post.data.draft).length > 0 ? (
         posts
           .filter((post) => !post.data.draft)
-          .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+          .sort(
+            (a, b) =>
+              new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+          )
           .map((post) => <Post post={post} />)
       ) : (
         <article>
