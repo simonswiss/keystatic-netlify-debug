@@ -1,5 +1,6 @@
 import type { FC } from 'react'
 import type { CollectionEntry } from 'astro:content'
+import { marked } from 'marked'
 import style from '~/styles/post.module.scss'
 
 const Post: FC<{ post: CollectionEntry<'blog'> }> = ({ post }) => {
@@ -15,9 +16,17 @@ const Post: FC<{ post: CollectionEntry<'blog'> }> = ({ post }) => {
       <h2 className={style.title}>
         <a href={url}>{post.data.title}</a>
       </h2>
-      <p className={style.excerpt}>
-        {post.body.match(/^(?!#|!|(?:<[^>]*>|&lt;[^&]*&gt;).*$|\s*$).*/m)?.[0]}
-      </p>
+      <div
+        className={style.excerpt}
+        dangerouslySetInnerHTML={{
+          __html: marked.parse(
+            post.body.match(
+              /^(?!#|!|(?:<[^>]*>|&lt;[^&]*&gt;).*$|\s*$).*/m
+            )?.[0] as string,
+            { mangle: false, headerIds: false }
+          ),
+        }}
+      />
       <div className={style.tags}>
         <a href={url}>
           {new Date(post.data.date).toLocaleDateString('id-ID', {
@@ -28,7 +37,7 @@ const Post: FC<{ post: CollectionEntry<'blog'> }> = ({ post }) => {
           })}
         </a>
         {post.data.tags?.map((tag, i) => (
-          <a href={`#/tags/${tag.slug}`} key={i}>
+          <a href={`/tags/${tag.slug}`} key={i}>
             {tag.name}
           </a>
         ))}

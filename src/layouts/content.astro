@@ -1,0 +1,70 @@
+---
+import PageLayout from './page.astro'
+import type { CollectionEntry } from 'astro:content'
+import { Image } from 'astro:assets'
+
+interface Props {
+  page: CollectionEntry<'blog'> | CollectionEntry<'page'>
+}
+
+const { page } = Astro.props
+---
+
+<PageLayout
+  title={page.data.title}
+  description={page.data.description ||
+    (page.body.match(
+      /^(?!#|!|(?:<[^>]*>|&lt;[^&]*&gt;).*$|\s*$).*/m
+    )?.[0] as string)}
+>
+  <Fragment slot="heading">
+    {
+      page.data.image && (
+        <p class="image">
+          <Image
+            src={page.data.image as string}
+            width={700}
+            height={525}
+            alt={page.data.title}
+            loading="eager"
+            decoding="async"
+          />
+        </p>
+      )
+    }
+  </Fragment>
+  <slot />
+</PageLayout>
+
+<style lang="scss">
+  .image {
+    img {
+      object-fit: cover;
+      width: 100%;
+      aspect-ratio: 4/3;
+    }
+  }
+
+  @media (min-width: 576px) {
+    :global(p) {
+      --font-size: 1.125rem;
+    }
+
+    :global(p:not(.image):has(img)) {
+      text-align: center;
+
+      :global(img) {
+        max-height: 480px;
+        max-width: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    .image {
+      margin: 0 calc(var(--spacing) * -1) var(--spacing);
+    }
+  }
+</style>

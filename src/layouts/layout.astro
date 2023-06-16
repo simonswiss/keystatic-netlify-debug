@@ -32,6 +32,12 @@ const profile = await getImage({
         ? `${title} | ${site.data.title}`
         : `${site.data.title} | ${site.data.description}`}
       description={description || site.data.description}
+      extend={{
+        link: [
+          { rel: 'me', href: 'https://github.com/radenpioneer' },
+          { rel: 'me', href: 'https://twitter.com/radenpioneer' },
+        ],
+      }}
     />
     <Icons />
     <slot name="head" />

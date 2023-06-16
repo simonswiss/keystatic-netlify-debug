@@ -1,0 +1,26 @@
+---
+import List from '~/layouts/list.astro'
+import { getCollection } from 'astro:content'
+
+export const getStaticPaths = async () => {
+  const allBlogPosts = await getCollection('blog')
+  const allTags = [
+    ...new Set(allBlogPosts.map((post) => post.data.tags).flat()),
+  ]
+
+  return allTags.map((tag) => {
+    const postsInTag = allBlogPosts.filter((post) =>
+      post.data.tags?.some((t) => t.slug === tag?.slug)
+    )
+
+    return {
+      params: { tag: tag?.slug },
+      props: { tag, posts: postsInTag },
+    }
+  })
+}
+
+const { tag, posts } = Astro.props
+---
+
+<List title={tag.name} posts={posts} />

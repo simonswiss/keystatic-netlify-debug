@@ -1,6 +1,6 @@
 ---
+import PageLayout from './page.astro'
 import type { CollectionEntry } from 'astro:content'
-import Layout from '~/layouts/layout.astro'
 import Post from '~/components/post'
 
 export interface Props {
@@ -11,41 +11,33 @@ export interface Props {
 const { title, posts } = Astro.props
 ---
 
-<Layout title={title!}>
-  <section class="posts">
-    {title && <h1 class="title">{title}</h1>}
-    {
-      posts.filter((post) => !post.data.draft).length > 0 ? (
-        posts
-          .filter((post) => !post.data.draft)
-          .sort(
-            (a, b) =>
-              new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
-          )
-          .map((post) => <Post post={post} />)
-      ) : (
-        <article>
-          <p>Belum ada konten.</p>
-        </article>
-      )
-    }
-  </section>
-</Layout>
+<PageLayout title={title!}>
+  <Fragment>
+    <section class="posts">
+      {
+        posts.filter((post) => !post.data.draft).length > 0 ? (
+          posts
+            .filter((post) => !post.data.draft)
+            .sort(
+              (a, b) =>
+                new Date(b.data.date).getTime() -
+                new Date(a.data.date).getTime()
+            )
+            .map((post) => <Post post={post} />)
+        ) : (
+          <article>
+            <p>Belum ada konten.</p>
+          </article>
+        )
+      }
+    </section>
+  </Fragment>
+</PageLayout>
 
 <style lang="scss">
-  .title {
-    font-weight: 700;
-  }
-
   .posts {
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
-  }
-
-  @media (min-width: 576px) {
-    .title {
-      font-size: 3.5rem;
-    }
   }
 </style>

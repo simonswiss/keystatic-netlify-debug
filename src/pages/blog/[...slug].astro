@@ -1,5 +1,5 @@
 ---
-import Page from '~/layouts/page.astro'
+import ContentLayout from '~/layouts/content.astro'
 import { type CollectionEntry, getCollection } from 'astro:content'
 
 interface Props {
@@ -28,6 +28,6 @@ const { post } = Astro.props
 const { Content } = await post.render()
 ---
 
-<Page page={post}>
+<ContentLayout page={post}>
   <Content />
-</Page>
+</ContentLayout>
