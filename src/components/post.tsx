@@ -5,8 +5,8 @@ import style from '~/styles/post.module.scss'
 const Post: FC<{ post: CollectionEntry<'blog'> }> = ({ post }) => {
   const url = [
     post.data.note ? '/note' : '/blog',
-    post.data.date.getFullYear(),
-    post.data.date.getMonth() + 1,
+    new Date(post.data.date).getFullYear(),
+    new Date(post.data.date).getMonth() + 1,
     post.slug,
   ].join('/')
 
@@ -20,7 +20,7 @@ const Post: FC<{ post: CollectionEntry<'blog'> }> = ({ post }) => {
       </p>
       <div className={style.tags}>
         <a href={url}>
-          {post.data.date.toLocaleDateString('id-ID', {
+          {new Date(post.data.date).toLocaleDateString('id-ID', {
             weekday: 'long',
             year: 'numeric',
             month: 'long',
@@ -28,8 +28,8 @@ const Post: FC<{ post: CollectionEntry<'blog'> }> = ({ post }) => {
           })}
         </a>
         {post.data.tags?.map((tag, i) => (
-          <a href={`#/tags/${tag}`} key={i}>
-            {tag}
+          <a href={`#/tags/${tag.slug}`} key={i}>
+            {tag.name}
           </a>
         ))}
       </div>

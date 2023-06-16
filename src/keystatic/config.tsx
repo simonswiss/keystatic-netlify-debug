@@ -30,7 +30,8 @@ export default config({
     blog: collection({
       slugField: 'title',
       label: 'Artikel',
-      path: 'src/content/blog/*/',
+      path: 'src/content/blog/*',
+      format: { contentField: 'content' },
       schema: {
         title: fields.slug({ name: { label: 'Judul' } }),
         description: fields.text({ label: 'Deskripsi', multiline: true }),
@@ -62,7 +63,8 @@ export default config({
     page: collection({
       slugField: 'title',
       label: 'Halaman',
-      path: 'src/content/page/*/',
+      path: 'src/content/page/*',
+      format: { contentField: 'content' },
       schema: {
         title: fields.slug({ name: { label: 'Judul' } }),
         description: fields.text({ label: 'Deskripsi', multiline: true }),
