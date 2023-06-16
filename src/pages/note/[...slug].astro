@@ -15,8 +15,8 @@ export const getStaticPaths = async () => {
   return blogPosts.map((post) => ({
     params: {
       slug: [
-        post.data.date.getFullYear(),
-        post.data.date.getMonth() + 1,
+        new Date(post.data.date).getFullYear(),
+        new Date(post.data.date).getMonth() + 1,
         post.slug,
       ].join('/'),
     },

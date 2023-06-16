@@ -18,7 +18,7 @@ const site = await getEntry('site', 'site')
 const { title, description } = Astro.props
 
 const profile = await getImage({
-  src: site.data.image,
+  src: site.data.image!,
   width: 70,
   height: 70,
 })

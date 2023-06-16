@@ -15,17 +15,15 @@ export const get = async () => {
     stylesheet: '/rss.xsl',
     items: entries.map((entry) => ({
       title: entry.data.title,
-      pubDate: entry.data.date,
+      pubDate: new Date(entry.data.date),
       description:
         entry.data.description ||
         entry.body.match(/^(?!#|!|(?:<[^>]*>|&lt;[^&]*&gt;).*$|\s*$).*/m)?.[0],
       link: getPostUrl(
         entry.data.note ? '/note' : '/blog',
-        entry.data.date,
+        new Date(entry.data.date),
         entry.slug
       ),
     })),
   })
 }
-
-// export const prerender = false

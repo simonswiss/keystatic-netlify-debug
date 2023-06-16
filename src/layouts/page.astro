@@ -20,6 +20,11 @@ const { page } = Astro.props
   <article>
     <h1 class="title">{page.data.title}</h1>
     {
+      page.data.description && (
+        <p class="description">{page.data.description}</p>
+      )
+    }
+    {
       page.data.image && (
         <p class="image">
           <Image
@@ -33,6 +38,7 @@ const { page } = Astro.props
         </p>
       )
     }
+    <hr />
     <slot />
   </article>
 </Layout>
@@ -40,6 +46,10 @@ const { page } = Astro.props
 <style lang="scss">
   .title {
     font-weight: 700;
+  }
+
+  .description {
+    font-size: calc(var(--font-size) * 1.55);
   }
 
   .image {
@@ -62,7 +72,7 @@ const { page } = Astro.props
         padding-left: 6rem;
         padding-right: 6rem;
         max-height: 400px;
-        max-width: max-content;
+        max-width: 100%;
         object-fit: contain;
       }
     }

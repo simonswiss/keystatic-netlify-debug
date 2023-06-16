@@ -34,7 +34,7 @@ const Header: FC<{
         <ul>
           {site.data.menu.map((item, i) => (
             <li className={style.menu} key={i}>
-              <a href={item?.href}>{item?.title}</a>
+              <a href={`/${item?.slug}`}>{item?.name}</a>
             </li>
           ))}
           <li>
@@ -79,8 +79,8 @@ const MobileMenu: FC<{ site: CollectionEntry<'site'> }> = ({ site }) => {
         <RadixDropdownMenu.Content className={style.menu__mobile}>
           {site.data.menu.map((item, i) => (
             <RadixDropdownMenu.Item key={i} asChild>
-              <a className={style.menu__mobile__item} href={item?.href}>
-                {item?.title}
+              <a className={style.menu__mobile__item} href={`/${item?.slug}`}>
+                {item?.name}
               </a>
             </RadixDropdownMenu.Item>
           ))}
