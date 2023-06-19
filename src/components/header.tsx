@@ -14,35 +14,33 @@ const Header: FC<{
   imageHeight?: string | number
 }> = ({ site, imageSrc, imageWidth, imageHeight }) => {
   return (
-    <header>
-      <nav className="container">
-        <ul>
-          <li className={style.logotype}>
-            <a href="/">
-              <Profile
-                src={imageSrc as string}
-                width={imageWidth as string | number}
-                height={imageHeight as string | number}
-                alt={site.data.title}
-              />
-            </a>
-            <a className={style.logotype__title} href="/">
-              {site.data.title}
-            </a>
+    <nav className="container">
+      <ul>
+        <li className={style.logotype}>
+          <a href="/">
+            <Profile
+              src={imageSrc as string}
+              width={imageWidth as string | number}
+              height={imageHeight as string | number}
+              alt={site.data.title}
+            />
+          </a>
+          <a className={style.logotype__title} href="/">
+            {site.data.title}
+          </a>
+        </li>
+      </ul>
+      <ul>
+        {site.data.menu.map((item: any, i: number) => (
+          <li className={style.menu} key={i}>
+            <a href={`/${item?.slug}`}>{item?.name}</a>
           </li>
-        </ul>
-        <ul>
-          {site.data.menu.map((item, i) => (
-            <li className={style.menu} key={i}>
-              <a href={`/${item?.slug}`}>{item?.name}</a>
-            </li>
-          ))}
-          <li>
-            <MobileMenu site={site} />
-          </li>
-        </ul>
-      </nav>
-    </header>
+        ))}
+        <li>
+          <MobileMenu site={site} />
+        </li>
+      </ul>
+    </nav>
   )
 }
 
@@ -77,7 +75,7 @@ const MobileMenu: FC<{ site: CollectionEntry<'site'> }> = ({ site }) => {
       {/* Menu Content */}
       <RadixDropdownMenu.Portal>
         <RadixDropdownMenu.Content className={style.menu__mobile}>
-          {site.data.menu.map((item, i) => (
+          {site.data.menu.map((item: any, i: number) => (
             <RadixDropdownMenu.Item key={i} asChild>
               <a className={style.menu__mobile__item} href={`/${item?.slug}`}>
                 {item?.name}

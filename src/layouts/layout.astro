@@ -8,6 +8,7 @@ import '@fontsource-variable/plus-jakarta-sans'
 
 import Icons from '~/components/icons.astro'
 import Header from '~/components/header'
+import Footer from '~/components/footer'
 
 interface Props {
   title?: string
@@ -44,17 +45,34 @@ const profile = await getImage({
   </Fragment>
 
   <!-- Body -->
-  <Header
-    site={site}
-    imageSrc={profile.src}
-    imageWidth={profile.attributes.width}
-    imageHeight={profile.attributes.height}
-    client:idle
-  />
+  <header>
+    <Header
+      site={site}
+      imageSrc={profile.src}
+      imageWidth={profile.attributes.width}
+      imageHeight={profile.attributes.height}
+      client:idle
+    />
+  </header>
   <main class="container">
     <slot />
   </main>
+  <footer>
+    <Footer client:visible />
+  </footer>
 </BaseLayout>
+
+<style lang="scss">
+  body > header {
+    --block-spacing-vertical: calc(var(--spacing) * 1.5);
+  }
+
+  @media (min-width: 576px) {
+    body > header {
+      --block-spacing-vertical: calc(var(--spacing) * 2.5) !important;
+    }
+  }
+</style>
 
 <style lang="scss" is:global>
   @use '../../node_modules/@picocss/pico/scss/pico.slim.scss';
