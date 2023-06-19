@@ -4,5 +4,7 @@ image: /src/assets/uploads/site/image.jpg
 menu:
   - name: Siapa?
     slug: siapa
+  - name: Esai
+    slug: esai
   - name: Catatan
     slug: note
