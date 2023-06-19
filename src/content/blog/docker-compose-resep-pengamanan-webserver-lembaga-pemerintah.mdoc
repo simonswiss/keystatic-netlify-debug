@@ -1,0 +1,25 @@
+---
+title: Docker Compose, resep pengamanan webserver lembaga pemerintah
+description: 'Catatan Mingguan #2: Percayakan saja sama si paus biru'
+image: >-
+  /src/assets/uploads/blog/docker-compose-resep-pengamanan-webserver-lembaga-pemerintah/image.jpg
+date: '2023-06-19'
+tags:
+  - name: Catatan Pekanan
+    slug: catatan-pekanan
+  - name: Kerja
+    slug: kerja
+  - name: Web Development
+    slug: web-development
+draft: false
+note: true
+---
+Context: Bulan Ramadhan lalu, tepat ketika takbiran (versi Muhammadiyah) berkumandang, tiba-tiba saya dapat telepon mendadak, mengeluhkan bahwa salah satu klien websitenya disisipi iklan situs judi. Kami yang sudah pikirannya melayang ingin libur Lebaran tiba-tiba langsung pusing tujuh keliling bak ketindihan paus biru.
+
+Problem di atas, memang merupakan problem berulang bagi situs-situs lembaga pemerintahan Indonesia, khususnya milik pemerintah daerah. Tentu saja, karena server yang jarang dirawat, tenaga IT kominfo yang tidak profesional, *the list goes on.*Kerentanan ini mengakibatkan hacker-hacker kelas teri sering menjadikan situs pemerintahan sebagai training ground. Serangan seperti defacing, malware, hingga ransomware, menjadi problem yang harus dihadapi oleh developer situs pemerintah, apalagi kalau staf Diskominfonya sudah angkat tangan...
+
+Saya mencoba melahirkan solusi untuk mencegah problem berulang ini. Sebenarnya, banyak platform web yang sudah cukup tahan terhadap serangan-serangan di atas: bikin websitenya pakai Jamstack, host di PaaS macam Vercel atau Netlify. Namun namanya aset milik negara, tak bisa sembarangan. Netlify servernya berbasis di Frankfurt, Jerman, sementara Vercel di Washington DC, USA. Regulasi "memerintahkan" kita untuk hosting di Indonesia saja, *specifically*, di server milik Kominfo. Iya, server yang rentan dan jarang dirawat itu. Tentu saja karena biaya hosting yang gratis untuk lembaga pemerintahan, sehingga bisa menghemat anggaran negara. Huft. Untungnya, Kominfo juga menyediakan server dalam bentuk VPS kosongan, developer bebas untuk setting dan pasang aplikasi yang dibutuhkan.
+
+Cara kerja server seperti Netlify dan Vercel adalah: membuat aplikasi yang bersifat *ephemeral*, atau "fana", seperti hidup kita ini. Sifat kefanaan ini didukung oleh teknologi virtualisasi, dan kontainerisasi. Poin yang saya ambil, aplikasi harus bersifat fana sehingga meningkatkan resiliensi dan reliabilitas. Selain itu, aplikasi juga harus terisolasi dari sistem utama, demi mengurangi area serangan. Di sinilah, teknologi Docker & Docker Compose masuk.
+
+Maka solusi saya: membuat sistem server berbasis kontainer serta sistem orkestrasi sederhana berbasis Github Actions. Cara kerjanya, begini: setiap ada push ke repositori, atau ditrigger manual lewat satu kali klik tombol, maka Github Actions akan menjalankan proses untuk *build container*, kemudian mentransfer kontainer yang sudah jadi ke server Kominfo. Di VPS yang sudah terpasang tersebut akan otomatis menjalankan kontainer yang sudah ditransfer, selayaknya webserver biasa namun *automated*. Dari tampak penampilan akan terlihat seolah sama saja dengan webserver biasa, namun perbedaannya adalah webserver yang lebih aman, resiliensi tinggi, dan lebih mudah *maintenance*-nya.
