@@ -12,13 +12,13 @@ export default defineConfig({
   integrations: [mdx(), react(), sitemap(), markdoc()],
   experimental: {
     assets: true,
-    redirects: true
+    redirects: true,
   },
   image: {
     service: sharpImageService(),
   },
   redirects: {
-    '/esai':'/tags/esai'
+    '/esai': '/tags/esai',
   },
   output: 'hybrid',
   adapter: netlify(),

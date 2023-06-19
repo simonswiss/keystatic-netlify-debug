@@ -24,7 +24,7 @@ const { page } = Astro.props
           <Image
             src={page.data.image as string}
             width={700}
-            height={525}
+            height={438}
             alt={page.data.title}
             loading="eager"
             decoding="async"
@@ -40,8 +40,9 @@ const { page } = Astro.props
   .image {
     img {
       object-fit: cover;
+      object-position: center;
       width: 100%;
-      aspect-ratio: 4/3;
+      aspect-ratio: 16/10;
     }
   }
 
