@@ -65,6 +65,9 @@ dependencies:
   marked:
     specifier: 5.1.0
     version: 5.1.0
+  marked-smartypants:
+    specifier: ^1.0.2
+    version: 1.0.2(marked@5.1.0)
   postcss:
     specifier: 8.4.24
     version: 8.4.24
@@ -6840,6 +6843,15 @@ packages:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
     dev: false
 
+  /marked-smartypants@1.0.2(marked@5.1.0):
+    resolution: {integrity: sha512-hpbM9waiBSIHpqdoU5AAeuYozeObBwUet3xkCFrFBA+1329byRVxLDwYmelMCS3ss+sEVJhDgrunIy+ubiqFwQ==}
+    peerDependencies:
+      marked: ^4 || ^5
+    dependencies:
+      marked: 5.1.0
+      smartypants: 0.1.6
+    dev: false
+
   /marked@5.1.0:
     resolution: {integrity: sha512-z3/nBe7aTI8JDszlYLk7dDVNpngjw0o1ZJtrA9kIfkkHcIF+xH7mO23aISl4WxP83elU+MFROgahqdpd05lMEQ==}
     engines: {node: '>= 18'}
@@ -9044,6 +9056,11 @@ packages:
       immer: 9.0.21
       is-plain-object: 5.0.0
       tiny-warning: 1.0.3
+    dev: false
+
+  /smartypants@0.1.6:
+    resolution: {integrity: sha512-zGXh+Q6Y3OPTLM5x2HxAIkEAj4ZcePftmIOdIYozv2T+m03Sp5R4YppczKuo6IdnSMc99U+Wgvy8Mil0eeep7g==}
+    hasBin: true
     dev: false
 
   /source-map-js@1.0.2:

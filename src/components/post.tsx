@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 import type { CollectionEntry } from 'astro:content'
-import { marked } from 'marked'
+import { parser } from '~/lib/marked'
 import style from '~/styles/post.module.scss'
 
 const Post: FC<{ post: CollectionEntry<'blog'> }> = ({ post }) => {
@@ -16,14 +16,13 @@ const Post: FC<{ post: CollectionEntry<'blog'> }> = ({ post }) => {
       <h2 className={style.title}>
         <a href={url}>{post.data.title}</a>
       </h2>
-      <div
+      <p
         className={style.excerpt}
         dangerouslySetInnerHTML={{
-          __html: marked.parse(
+          __html: parser(
             post.body.match(
               /^(?!#|!|(?:<[^>]*>|&lt;[^&]*&gt;).*$|\s*$).*/m
-            )?.[0] as string,
-            { mangle: false, headerIds: false }
+            )?.[0] as string
           ),
         }}
       />
