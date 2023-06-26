@@ -42,13 +42,13 @@ export default defineConfig({
     optimizeDeps: {
       exclude: ['@resvg/resvg-js'],
     },
-    ssr: {
-      external: ['@resvg/resvg-js'],
-    },
-    build: {
-      rollupOptions: {
-        external: ['@resvg/resvg-js'],
-      },
-    },
+    // ssr: {
+    //   external: ['@resvg/resvg-js'],
+    // },
+    // build: {
+    //   rollupOptions: {
+    //     external: ['@resvg/resvg-js'],
+    //   },
+    // },
   },
 })

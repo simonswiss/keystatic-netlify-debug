@@ -3,7 +3,7 @@
   autoLaunch = false
 
 [functions]
-  # external_node_modules = ["@resvg/resvg-js"]
+  external_node_modules = ["@resvg/resvg-js"]
   included_files = ["node_modules/@fontsource/plus-jakarta-sans/**/*"]
 
 # Config for the Netlify Build Plugin: netlify-plugin-minify-html
