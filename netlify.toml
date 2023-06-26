@@ -3,7 +3,8 @@
   autoLaunch = false
 
 [functions]
-  included_files = ["node_modules/@fontsource/plus-jakarta-sans/**/*"]
+  external_node_modules = ["sharp"]
+  included_files = ["node_modules/@fontsource/plus-jakarta-sans/**/*", "node_modules/sharp/**/*", "node_modules/semver/**/*"]
 
 # Config for the Netlify Build Plugin: netlify-plugin-minify-html
 [[plugins]]
