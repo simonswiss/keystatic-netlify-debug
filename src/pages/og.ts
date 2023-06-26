@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro'
 import { readFileSync } from 'node:fs'
 import { getEntry } from 'astro:content'
-import sharp from 'sharp'
+// import sharp from 'sharp'
 import { html } from 'satori-html'
 import satori from 'satori'
 
@@ -46,12 +46,12 @@ export const get: APIRoute = async ({ request }) => {
     ],
   })
 
-  const png = sharp(Buffer.from(svg)).png()
+  // const png = sharp(Buffer.from(svg)).png()
 
-  return new Response(await png.toBuffer(), {
+  return new Response(svg, {
     status: 200,
     headers: {
-      'Content-Type': 'image/png',
+      'Content-Type': 'image/svg+xml',
     },
   })
 }
