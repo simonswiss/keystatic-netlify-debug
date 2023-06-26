@@ -33,6 +33,27 @@ const profile = await getImage({
         ? `${title} | ${site.data.title}`
         : `${site.data.title} | ${site.data.description}`}
       description={description || site.data.description}
+      openGraph={{
+        basic: {
+          title: title || site.data.title,
+          type: Astro.url.pathname !== '/' ? 'article' : 'website',
+          image: `${Astro.url.origin}${Astro.url.pathname !== '/' ? `/og${Astro.url.pathname}.png` : '/og/og.png'}`
+        },
+        optional: {
+          description: description || site.data.description,
+          locale: 'id_ID',
+          siteName: site.data.title
+        },
+        image: {
+          type: 'image/png',
+          width: 1200,
+          height: 630,
+          alt: title || site.data.title
+        }
+      }}
+      twitter={{
+        creator: '@radenpioneer'
+      }}
       extend={{
         link: [
           { rel: 'me', href: 'https://github.com/radenpioneer' },
