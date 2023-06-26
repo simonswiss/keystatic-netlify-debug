@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -60,13 +60,13 @@ dependencies:
     specifier: 0.7.4
     version: 0.7.4
   external-svg-loader:
-    specifier: ^1.6.7
+    specifier: 1.6.7
     version: 1.6.7
   marked:
     specifier: 5.1.0
     version: 5.1.0
   marked-smartypants:
-    specifier: ^1.0.2
+    specifier: 1.0.2
     version: 1.0.2(marked@5.1.0)
   postcss:
     specifier: 8.4.24
