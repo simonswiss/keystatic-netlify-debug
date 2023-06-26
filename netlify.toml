@@ -4,7 +4,7 @@
 
 [functions]
   external_node_modules = ["sharp"]
-  included_files = ["node_modules/@fontsource/plus-jakarta-sans/**/*", "node_modules/sharp/**/*", "node_modules/semver/**/*"]
+  included_files = ["node_modules/@fontsource/plus-jakarta-sans/**/*"]
 
 # Config for the Netlify Build Plugin: netlify-plugin-minify-html
 [[plugins]]

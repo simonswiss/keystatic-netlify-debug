@@ -1,7 +1,8 @@
 import type { APIRoute } from 'astro'
-import { readFileSync } from 'node:fs'
 import { getEntry } from 'astro:content'
-import sharp from 'sharp'
+import PlusJakartaSans400 from '@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-400-normal.woff'
+import PlusJakartaSans700 from '@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-700-normal.woff'
+import { Resvg } from '@resvg/resvg-js'
 import { html } from 'satori-html'
 import satori from 'satori'
 
@@ -29,26 +30,27 @@ export const get: APIRoute = async ({ request }) => {
     fonts: [
       {
         name: 'Plus Jakarta Sans',
-        data: readFileSync(
-          `${process.cwd()}/node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-400-normal.woff`
-        ),
+        data: Buffer.from(PlusJakartaSans400),
         style: 'normal',
         weight: 400,
       },
       {
         name: 'Plus Jakarta Sans',
-        data: readFileSync(
-          `${process.cwd()}/node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-700-normal.woff`
-        ),
+        data: Buffer.from(PlusJakartaSans700),
         style: 'normal',
         weight: 700,
       },
     ],
   })
 
-  const png = sharp(Buffer.from(svg)).png()
+  const image = new Resvg(svg, {
+    fitTo: {
+      mode: 'width',
+      value: 1200,
+    },
+  }).render()
 
-  return new Response(await png.toBuffer(), {
+  return new Response(image.asPng(), {
     status: 200,
     headers: {
       'Content-Type': 'image/png',
