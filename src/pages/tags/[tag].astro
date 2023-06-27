@@ -3,7 +3,7 @@ import List from '~/layouts/list.astro'
 import { getCollection } from 'astro:content'
 
 export const getStaticPaths = async () => {
-  const allBlogPosts = await getCollection('blog')
+  const allBlogPosts = await getCollection('blog', ({ data }) => !data.draft)
   const allTags = [
     ...new Set(allBlogPosts.map((post) => post.data.tags).flat()),
   ]

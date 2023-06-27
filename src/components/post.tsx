@@ -7,7 +7,7 @@ const Post: FC<{ post: CollectionEntry<'blog'> }> = ({ post }) => {
   const url = [
     post.data.note ? '/note' : '/blog',
     new Date(post.data.date).getFullYear(),
-    new Date(post.data.date).getMonth() + 1,
+    new Date(post.data.date).toISOString().substring(5,7),
     post.slug,
   ].join('/')
 

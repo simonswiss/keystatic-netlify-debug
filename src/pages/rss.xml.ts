@@ -2,7 +2,7 @@ import rss from '@astrojs/rss'
 import { getEntry, getCollection } from 'astro:content'
 
 const getPostUrl = (path: string, date: Date, slug: string) =>
-  [path, date.getFullYear(), date.getMonth() + 1, slug].join('/')
+  [path, date.getFullYear(), date.toISOString().substring(5,7), slug].join('/')
 
 export const get = async () => {
   const site = await getEntry('site', 'site')

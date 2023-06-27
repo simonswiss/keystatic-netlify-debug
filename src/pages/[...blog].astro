@@ -1,0 +1,34 @@
+---
+import ContentLayout from '~/layouts/content.astro'
+import { type CollectionEntry, getCollection } from 'astro:content'
+
+interface Props {
+  entry: CollectionEntry<'blog'>
+}
+
+export const getStaticPaths = async () => {
+  const content = await getCollection(
+    'blog',
+    ({ data }) => !data.draft
+  )
+
+  return content.map((entry) => ({
+    params: {
+      blog: [
+        entry.data.note ? 'note' : 'blog',
+        new Date(entry.data.date).getFullYear(),
+        new Date(entry.data.date).toISOString().substring(5,7),
+        entry.slug,
+      ].join('/'),
+    },
+    props: { entry },
+  }))
+}
+
+const { entry } = Astro.props
+const { Content } = await entry.render()
+---
+
+<ContentLayout page={entry}>
+  <Content />
+</ContentLayout>

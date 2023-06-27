@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro'
-import { getCollection, getEntry } from 'astro:content'
+import { CollectionEntry, getCollection, getEntry } from 'astro:content'
 import { extractExcerpt } from '~/lib/helper'
 import PlusJakartaSans400 from '@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-400-normal.woff'
 import PlusJakartaSans700 from '@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-700-normal.woff'
@@ -7,30 +7,54 @@ import { Resvg } from '@resvg/resvg-js'
 import { html } from 'satori-html'
 import satori from 'satori'
 
+const content = await getCollection('blog', ({ data }) => !data.draft)
+const tags = [...new Set(content.map((entry) => entry.data.tags).flat())]
+
 export const getStaticPaths = async () => {
-  const content = await getCollection('blog', ({ data }) => !data.draft)
   const contentParams = content.map((entry) => ({
     params: {
-      slug: [
+      og: [
         entry.data.note ? 'note' : 'blog',
         new Date(entry.data.date).getFullYear(),
-        new Date(entry.data.date).getMonth() + 1,
+        new Date(entry.data.date).toISOString().substring(5,7),
         entry.slug,
+        'og',
       ].join('/'),
     },
   }))
 
-  return contentParams.concat(['og'].map((slug) => ({ params: { slug } })))
+  const tagsParams = tags.map((tag) => ({
+    params: {
+      og: ['tags', tag?.slug, 'og'].join('/'),
+    },
+  }))
+
+  return contentParams
+    .concat(tagsParams)
+    .concat(['og'].map((og) => ({ params: { og } })))
 }
 
 export const get: APIRoute = async ({ params }) => {
   const site = await getEntry('site', 'site')
-  const entry = await getEntry('blog', params.slug?.split('/').at(-1) as string)
-  const title = entry ? entry.data.title : site.data.title
-  const excerpt = entry
+  const entry =
+    params.og?.split('/').at(0) !== 'og'
+      ? params.og?.split('/').at(1) !== 'tags'
+        ? await getEntry('blog', params.og?.split('/').at(-2) as string)
+        : tags.filter((tag) => tag?.slug === params.og?.split('/').at(-2)).at(0)
+      : undefined
+  const isBlog = (entry: any): entry is CollectionEntry<'blog'> => entry
+  const isTag = (entry: any): entry is { name: string; slug: string } => entry
+  const title = isBlog(entry)
+    ? entry.data.title
+    : isTag(entry)
+    ? entry.name
+    : site.data.title
+  const excerpt = isBlog(entry)
     ? entry.data.description
       ? entry.data.description
       : extractExcerpt(entry.body)
+    : isTag(entry)
+    ? `Artikel dengan tag ${entry.name}`
     : site.data.description
 
   const markup = html(`
