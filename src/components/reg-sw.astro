@@ -1,12 +1,3 @@
-<script is:inline>
-  import { registerSW } from 'virtual:pwa-register'
-
-  const updateSW = registerSW({
-    onNeedRefresh() {},
-    onOfflineReady() {
-      console.log('Offline ready')
-    },
-  })
-
-  updateSW()
+<script>
+  import '~/includes/pwa';
 </script>
