@@ -37,7 +37,6 @@ export default defineConfig({
       srcDir: 'src/includes',
       filename: 'sw.ts',
       registerType: 'autoUpdate',
-      devOptions: { enabled: true },
       includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
       manifest,
     }),

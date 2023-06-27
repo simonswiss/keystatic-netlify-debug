@@ -2,7 +2,6 @@
   "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
     "types": ["vite-plugin-pwa/client"],
-    "lib": ["WebWorker"],
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "esModuleInterop": true,
