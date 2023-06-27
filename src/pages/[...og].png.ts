@@ -16,7 +16,7 @@ export const getStaticPaths = async () => {
       og: [
         entry.data.note ? 'note' : 'blog',
         new Date(entry.data.date).getFullYear(),
-        new Date(entry.data.date).toISOString().substring(5,7),
+        new Date(entry.data.date).toISOString().substring(5, 7),
         entry.slug,
         'og',
       ].join('/'),

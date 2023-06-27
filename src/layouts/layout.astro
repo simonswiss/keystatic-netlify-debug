@@ -9,6 +9,7 @@ import '@fontsource-variable/plus-jakarta-sans'
 import Icons from '~/components/icons.astro'
 import Header from '~/components/header'
 import Footer from '~/components/footer'
+import RegSw from '~/components/reg-sw.astro'
 
 interface Props {
   title?: string
@@ -37,22 +38,22 @@ const profile = await getImage({
         basic: {
           title: title || site.data.title,
           type: Astro.url.pathname !== '/' ? 'article' : 'website',
-          image: `${Astro.url.href}og.png`
+          image: `${Astro.url.href}og.png`,
         },
         optional: {
           description: description || site.data.description,
           locale: 'id_ID',
-          siteName: site.data.title
+          siteName: site.data.title,
         },
         image: {
           type: 'image/png',
           width: 1200,
           height: 630,
-          alt: title || site.data.title
-        }
+          alt: title || site.data.title,
+        },
       }}
       twitter={{
-        creator: '@radenpioneer'
+        creator: '@radenpioneer',
       }}
       extend={{
         link: [
@@ -81,6 +82,7 @@ const profile = await getImage({
   <footer>
     <Footer client:visible />
   </footer>
+  <RegSw />
 </BaseLayout>
 
 <style lang="scss">

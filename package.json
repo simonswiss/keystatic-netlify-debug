@@ -5,9 +5,9 @@
   "scripts": {
     "astro": "astro",
     "build": "astro build",
-    "check": "astro sync && pnpm dlx concurrently \"pnpm dlx prettier --check --plugin-search-dir=. .\" \"astro check\" \"tsc --noEmit\"",
+    "check": "astro sync && pnpm dlx concurrently \"pnpm exec prettier --check --plugin-search-dir=. .\" \"astro check\" \"tsc --noEmit\"",
     "dev": "astro dev",
-    "format": "pnpm dlx prettier --write --plugin-search-dir=. .",
+    "format": "pnpm exec prettier --write --plugin-search-dir=. .",
     "preview": "astro preview",
     "start": "pnpm build && pnpm preview"
   },
