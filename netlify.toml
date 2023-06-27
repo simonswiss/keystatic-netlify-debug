@@ -6,6 +6,27 @@
   external_node_modules = ["@resvg/resvg-js", "@resvg/resvg-js-linux-x64-gnu"]
   included_files = ["node_modules/@fontsource/plus-jakarta-sans/**/*"]
 
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    cache-control = '''
+    max-age=31536000,
+    immutable
+    '''
+
+[[headers]]
+  for = "/uploads/*"
+  [headers.values]
+    cache-control = '''
+    max-age=31536000,
+    immutable
+    '''
+
 # Config for the Netlify Build Plugin: netlify-plugin-minify-html
 [[plugins]]
   package = "netlify-plugin-minify-html"
