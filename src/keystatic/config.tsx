@@ -5,8 +5,8 @@ export default config({
     kind: 'github',
     repo: {
       owner: 'radenpioneer',
-      name: 'radenpioneer.blog'
-    }
+      name: 'radenpioneer.blog',
+    },
   },
 
   singletons: {
