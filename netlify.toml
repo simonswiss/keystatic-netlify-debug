@@ -7,7 +7,7 @@
   included_files = ["node_modules/@fontsource/plus-jakarta-sans/**/*"]
 
 [[headers]]
-  for = "/manifest.json"
+  for = "/manifest.webmanifest"
   [headers.values]
     Content-Type = "application/manifest+json"
 

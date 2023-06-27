@@ -1,5 +1,12 @@
 <script is:inline>
-  if (typeof navigator.serviceWorker !== 'undefined') {
-    navigator.serviceWorker.register('/sw.js')
-  }
+  import { registerSW } from 'virtual:pwa-register'
+
+  const updateSW = registerSW({
+    onNeedRefresh() {},
+    onOfflineReady() {
+      console.log('Offline ready')
+    },
+  })
+
+  updateSW()
 </script>

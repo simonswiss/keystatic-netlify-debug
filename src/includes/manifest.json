@@ -1,0 +1,51 @@
+{
+  "background_color": "#ffffff",
+  "description": "Personal, non-tech, rarely updated blog of R. Ilham Sastronegoro.",
+  "dir": "ltr",
+  "display": "browser",
+  "name": "radenpioneer.blog",
+  "orientation": "portrait",
+  "scope": "/",
+  "short_name": "radenpioneer.blog",
+  "start_url": "/",
+  "theme_color": "#1095c2",
+  "categories": ["education", "entertainment", "lifestyle", "politics"],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "pwa-64x64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "maskable-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Beranda",
+      "url": "/",
+      "description": "Halaman Beranda"
+    },
+    {
+      "name": "Catatan",
+      "url": "/note",
+      "description": "Catatan Pekanan"
+    }
+  ],
+  "lang": "id"
+}

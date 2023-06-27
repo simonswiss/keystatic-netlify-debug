@@ -4,7 +4,10 @@ import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
 import markdoc from '@astrojs/markdoc'
 import netlify from '@astrojs/netlify/functions'
+import AstroPWA from '@vite-pwa/astro'
+
 import { readFileSync } from 'node:fs'
+import manifest from './src/includes/manifest.json' assert { type: 'json' }
 
 // vite plugin to import fonts
 const rawFonts = (ext) => ({
@@ -24,7 +27,21 @@ const rawFonts = (ext) => ({
 export default defineConfig({
   site: process.env.NETLIFY ? process.env.URL : 'http://localhost:3000',
   compressHTML: process.env.NETLIFY ? true : false,
-  integrations: [mdx(), react(), sitemap(), markdoc()],
+  integrations: [
+    mdx(),
+    react(),
+    sitemap(),
+    markdoc(),
+    AstroPWA({
+      strategies: 'injectManifest',
+      srcDir: 'src/includes',
+      filename: 'sw.ts',
+      registerType: 'autoUpdate',
+      devOptions: { enabled: true },
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
+      manifest,
+    }),
+  ],
   experimental: {
     assets: true,
     redirects: true,

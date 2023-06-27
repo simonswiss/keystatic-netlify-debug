@@ -4,12 +4,13 @@
   "type": "module",
   "scripts": {
     "astro": "astro",
-    "build": "astro build",
+    "build": "pnpm generate-icons && astro build",
     "check": "astro sync && pnpm dlx concurrently \"pnpm exec prettier --check --plugin-search-dir=. .\" \"astro check\" \"tsc --noEmit\"",
     "dev": "astro dev",
     "format": "pnpm exec prettier --write --plugin-search-dir=. .",
     "preview": "astro preview",
-    "start": "pnpm build && pnpm preview"
+    "start": "pnpm build && pnpm preview",
+    "generate-icons": "pwa-assets-generator --preset minimal public/logo.jpg"
   },
   "dependencies": {
     "@astrojs/markdoc": "0.3.1",
@@ -30,6 +31,8 @@
     "@types/marked": "5.0.0",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
+    "@vite-pwa/assets-generator": "^0.0.3",
+    "@vite-pwa/astro": "^0.1.1",
     "astro": "2.7.0",
     "astro-seo": "0.7.4",
     "external-svg-loader": "1.6.7",
@@ -43,7 +46,11 @@
     "satori": "^0.10.1",
     "satori-html": "^0.3.2",
     "sharp": "0.32.1",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "vite-plugin-pwa": "^0.16.4",
+    "workbox-core": "^7.0.0",
+    "workbox-precaching": "^7.0.0",
+    "workbox-recipes": "^7.0.0"
   },
   "packageManager": "pnpm@8.6.5"
 }
