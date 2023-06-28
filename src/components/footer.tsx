@@ -14,7 +14,11 @@ const Footer: FC = () => (
   <nav className="container">
     <ul>
       <li>
-        <a href={NETLIFY_STATUS.url.href} target="_blank" rel="noopener noreferrer">
+        <a
+          href={NETLIFY_STATUS.url.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <svg data-src={NETLIFY_STATUS.badge.href} />
         </a>
       </li>
