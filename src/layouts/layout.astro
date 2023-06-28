@@ -87,12 +87,16 @@ const profile = await getImage({
 </BaseLayout>
 
 <style lang="scss">
-  body > header {
+  header {
     --block-spacing-vertical: calc(var(--spacing) * 1.5);
   }
 
+  main {
+    flex: 1 1 0%;
+  }
+
   @media (min-width: 576px) {
-    body > header {
+    header {
       --block-spacing-vertical: calc(var(--spacing) * 2.5) !important;
     }
   }
@@ -107,5 +111,7 @@ const profile = await getImage({
 
   body {
     min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
   }
 </style>

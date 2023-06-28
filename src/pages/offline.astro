@@ -1,0 +1,13 @@
+---
+import ErrorLayout from '~/layouts/error.astro'
+import { Image } from 'astro:assets'
+
+import ImageOffline from '~/assets/error/offline.jpg'
+
+const title = 'Offline'
+const message = 'Cek kuota Anda.'
+---
+
+<ErrorLayout title={title} message={message}>
+  <Image src={ImageOffline} alt={title} />
+</ErrorLayout>

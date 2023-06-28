@@ -1,0 +1,49 @@
+---
+import Layout from './layout.astro'
+
+interface Props {
+  title: string
+  message: string
+}
+
+const { title, message } = Astro.props
+---
+
+<Layout>
+  <Fragment slot="head"></Fragment>
+  <article>
+    <h1>{title}</h1>
+    <slot />
+    <p>{message}</p>
+  </article>
+</Layout>
+
+<style lang="scss">
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    min-height: 100%;
+  }
+
+  h1 {
+    --font-weight: 900;
+    margin: 0;
+
+    background: linear-gradient(
+      -30deg,
+      var(--primary) 0%,
+      var(--secondary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @media (min-width: 576px) {
+    h1 {
+      --font-size: 3.5rem;
+    }
+  }
+</style>

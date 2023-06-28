@@ -1,0 +1,13 @@
+---
+import ErrorLayout from '~/layouts/error.astro'
+import { Image } from 'astro:assets'
+
+import Image404 from '~/assets/error/404.png'
+
+const title = '404 Not Found'
+const message = 'Jangan mencari yang tidak ada.'
+---
+
+<ErrorLayout title={title} message={message}>
+  <Image src={Image404} alt={title} />
+</ErrorLayout>
