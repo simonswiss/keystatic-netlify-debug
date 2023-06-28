@@ -12,8 +12,8 @@ dependencies:
     specifier: 0.19.7
     version: 0.19.7(astro@2.7.1)
   '@astrojs/netlify':
-    specifier: 2.2.3
-    version: 2.2.3(astro@2.7.1)
+    specifier: 2.3.0
+    version: 2.3.0(astro@2.7.1)
   '@astrojs/react':
     specifier: 2.2.0
     version: 2.2.0(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
@@ -269,11 +269,12 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/netlify@2.2.3(astro@2.7.1):
-    resolution: {integrity: sha512-CzhyFgXY4rnqFkKnaGp1mtQy0ZhcLWv7r8dFISliqEDmEqg4kL8eDljAQGBU/ednqsTVDgxf4EzkeqpVdqbMkQ==}
+  /@astrojs/netlify@2.3.0(astro@2.7.1):
+    resolution: {integrity: sha512-gd9Ij4IYKnzbtwdQntknorWI/2oWSlfYnS7WoFUetLgYZzWsPw9WYa3dIiL1YofQcNSByik/1Asf6uZofG+xHA==}
     peerDependencies:
-      astro: ^2.5.0
+      astro: ^2.6.0
     dependencies:
+      '@astrojs/underscore-redirects': 0.1.0
       '@astrojs/webapi': 2.2.0
       '@netlify/functions': 1.6.0
       astro: 2.7.1(sass@1.63.6)(sharp@0.32.1)
@@ -334,6 +335,10 @@ packages:
       which-pm-runs: 1.1.0
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@astrojs/underscore-redirects@0.1.0:
+    resolution: {integrity: sha512-ZVBhD1Tj+gIY3sPu80UCrtbU8qLf6CevlRC6xeuGK8s09YpLzRkwmkxu+T1qVyv63hsW/ObTqu03RBoLuFBq2A==}
     dev: false
 
   /@astrojs/webapi@2.2.0:
