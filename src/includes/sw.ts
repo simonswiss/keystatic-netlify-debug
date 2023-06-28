@@ -8,7 +8,7 @@ import {
   pageCache,
   imageCache,
   staticResourceCache,
-  offlineFallback,
+  warmStrategyCache,
 } from 'workbox-recipes'
 
 declare let self: ServiceWorkerGlobalScope
@@ -17,6 +17,11 @@ declare let self: ServiceWorkerGlobalScope
 precacheAndRoute(self.__WB_MANIFEST)
 self.skipWaiting()
 clientsClaim()
+
+warmStrategyCache({
+  urls: ['/index.html', '/offline/index.html'],
+  strategy: new CacheFirst(),
+})
 
 registerRoute(
   ({ request }) => request.destination === 'font',
@@ -34,8 +39,6 @@ registerRoute(
   })
 )
 
-// instant recipes
-pageCache()
 staticResourceCache()
+pageCache()
 imageCache()
-offlineFallback()
