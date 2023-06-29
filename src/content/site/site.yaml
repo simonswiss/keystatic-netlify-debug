@@ -7,4 +7,4 @@ menu:
   - name: Esai
     slug: esai
   - name: Catatan
-    slug: note
+    slug: posts/note

@@ -12,11 +12,13 @@ export const getStaticPaths = async () => {
   return content.map((entry) => ({
     params: {
       blog: [
-        entry.data.note ? 'note' : 'blog',
+        entry.data.note ? 'note' : '',
         new Date(entry.data.date).getFullYear(),
         new Date(entry.data.date).toISOString().substring(5, 7),
         entry.slug,
-      ].join('/'),
+      ]
+        .filter((s) => s)
+        .join('/'),
     },
     props: { entry },
   }))
