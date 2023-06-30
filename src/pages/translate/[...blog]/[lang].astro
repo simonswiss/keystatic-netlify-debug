@@ -4,7 +4,7 @@ import { getEntry } from 'astro:content'
 // import { Debug } from 'astro/components'
 
 const { blog, lang } = Astro.params
-if (lang && lang.length > 2) {
+if (lang!.length > 2) {
   return Astro.redirect(`${Astro.url.pathname}/en`)
 }
 const entry = await getEntry('blog', blog!.split('/').at(-1) as string)
@@ -16,7 +16,7 @@ const { Content } = await entry.render()
 export const prerender = false
 ---
 
-<ContentLayout page={entry}>
+<ContentLayout page={entry} lang={lang}>
   <Content />
 </ContentLayout>
 

@@ -4,18 +4,23 @@ import type { CollectionEntry } from 'astro:content'
 import { Image } from 'astro:assets'
 
 interface Props {
+  title?: string
+  description?: string
+  lang?: string
   page: CollectionEntry<'blog'> | CollectionEntry<'page'>
 }
 
-const { page } = Astro.props
+const { title, description, lang, page } = Astro.props
 ---
 
 <PageLayout
-  title={page.data.title}
-  description={page.data.description ||
+  title={title || page.data.title}
+  description={description ||
+    page.data.description ||
     (page.body
       .match(/^(?!#|!|(?:<[^>]*>|&lt;[^&]*&gt;).*$|\s*$).*/m)?.[0]
       .match(/[^\.!\?]+[\.!\?]+/)?.[0] as string)}
+  lang={lang}
 >
   <Fragment slot="heading">
     {

@@ -5,8 +5,7 @@ import style from '~/styles/post.module.scss'
 
 const Post: FC<{ post: CollectionEntry<'blog'> }> = ({ post }) => {
   const url = [
-    'posts',
-    post.data.note ? '/note' : '',
+    post.data.note ? 'note' : 'posts',
     new Date(post.data.date).getFullYear(),
     new Date(post.data.date).toISOString().substring(5, 7),
     post.slug,
