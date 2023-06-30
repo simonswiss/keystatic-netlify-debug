@@ -23,7 +23,7 @@ const { title, description, lang } = Astro.props
       {
         description && (
           <p class="description">
-            <Fragment set:html={parser(description)} />
+            <Fragment set:html={parser({ text: description, inline: true })} />
           </p>
         )
       }

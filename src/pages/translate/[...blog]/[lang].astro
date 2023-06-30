@@ -1,7 +1,10 @@
 ---
 import ContentLayout from '~/layouts/content.astro'
 import { getEntry } from 'astro:content'
-// import { Debug } from 'astro/components'
+import { Image } from 'astro:assets'
+import { translate } from '~/lib/translate'
+import { parser } from '~/lib/marked'
+import GTLogo from '~/assets/google-translate-logo.png'
 
 const { blog, lang } = Astro.params
 if (lang!.length > 2) {
@@ -12,12 +15,41 @@ if (!entry) {
   return Astro.redirect('/404')
 }
 
-const { Content } = await entry.render()
+const translated = await translate({
+  text: [
+    entry.data.title,
+    entry.data.description ||
+      (entry.body
+        .match(/^(?!#|!|(?:<[^>]*>|&lt;[^&]*&gt;).*$|\s*$).*/m)?.[0]
+        .match(/[^\.!\?]+[\.!\?]+/)?.[0] as string),
+    parser({ text: entry.body }),
+  ],
+  target: lang as string,
+})
+
 export const prerender = false
 ---
 
-<ContentLayout page={entry} lang={lang}>
-  <Content />
+<ContentLayout
+  title={translated.at(0)}
+  description={translated.at(1)}
+  page={entry}
+  lang={`${lang}-x-mtfrom-id`}
+>
+  <Fragment set:html={translated.at(2)} />
+  <p class="__attributions">
+    <a
+      href="http://translate.google.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Image src={GTLogo} height={16} alt="Translated by Google" />
+    </a>
+  </p>
 </ContentLayout>
 
-<!-- <Debug {{ lang, blog, entry }} /> -->
+<style lang="scss">
+  .__attributions {
+    text-align: right !important;
+  }
+</style>

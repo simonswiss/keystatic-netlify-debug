@@ -21,11 +21,12 @@ const Post: FC<{ post: CollectionEntry<'blog'> }> = ({ post }) => {
       <p
         className={style.excerpt}
         dangerouslySetInnerHTML={{
-          __html: parser(
-            post.body.match(
+          __html: parser({
+            text: post.body.match(
               /^(?!#|!|(?:<[^>]*>|&lt;[^&]*&gt;).*$|\s*$).*/m
-            )?.[0] as string
-          ),
+            )?.[0] as string,
+            inline: true,
+          }),
         }}
       />
       <div className={style.tags}>
