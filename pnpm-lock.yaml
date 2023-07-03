@@ -30,8 +30,8 @@ dependencies:
     specifier: ^5.0.3
     version: 5.0.3
   '@keystatic/astro':
-    specifier: 0.0.7
-    version: 0.0.7(@keystatic/core@0.0.107)(astro@2.7.1)(react-dom@18.2.0)(react@18.2.0)
+    specifier: 0.0.8
+    version: 0.0.8(@keystatic/core@0.0.107)(astro@2.7.1)(react-dom@18.2.0)(react@18.2.0)
   '@keystatic/core':
     specifier: 0.0.107
     version: 0.0.107(react-dom@18.2.0)(react@18.2.0)
@@ -2422,8 +2422,8 @@ packages:
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
     dev: false
 
-  /@keystatic/astro@0.0.7(@keystatic/core@0.0.107)(astro@2.7.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-AVSD8sM1IS5v16gexaTiUh1dHzNKlHh2DlXz2BXIjrQ91stdwlUPOQPbiSx6NfWruTYYE2vAucowbQlU7DP/7g==}
+  /@keystatic/astro@0.0.8(@keystatic/core@0.0.107)(astro@2.7.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-jn1JUWJsczsq1VkK3lOsjjVJ7e/cWWAkuYN1kJAbtAlJPtmlwESYfxPWYCbDrWADeNA2CEvU6H9AzN5GQrO2oQ==}
     peerDependencies:
       '@keystatic/core': '*'
       astro: '2'
