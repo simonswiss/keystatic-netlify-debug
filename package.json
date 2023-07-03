@@ -13,7 +13,7 @@
     "generate-icons": "pwa-assets-generator --preset minimal public/logo.jpg"
   },
   "dependencies": {
-    "@astrojs/markdoc": "0.3.1",
+    "@astrojs/markdoc": "0.3.3",
     "@astrojs/mdx": "0.19.7",
     "@astrojs/netlify": "2.3.0",
     "@astrojs/react": "2.2.1",
