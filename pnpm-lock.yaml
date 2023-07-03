@@ -72,8 +72,8 @@ dependencies:
     specifier: 0.7.4
     version: 0.7.4
   external-svg-loader:
-    specifier: 1.6.7
-    version: 1.6.7
+    specifier: 1.6.8
+    version: 1.6.8
   marked:
     specifier: 5.1.0
     version: 5.1.0
@@ -6521,6 +6521,16 @@ packages:
       yaml: 1.10.2
     dev: false
 
+  /cpr@3.0.1:
+    resolution: {integrity: sha512-Xch4PXQ/KC8lJ+KfJ9JI6eG/nmppLrPPWg5Q+vh65Qr9EjuJEubxh/H/Le1TmCZ7+Xv7iJuNRqapyOFZB+wsxA==}
+    hasBin: true
+    dependencies:
+      graceful-fs: 4.2.11
+      minimist: 1.2.8
+      mkdirp: 0.5.6
+      rimraf: 2.7.1
+    dev: false
+
   /cross-env@7.0.3:
     resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
     engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
@@ -7315,10 +7325,11 @@ packages:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
     dev: false
 
-  /external-svg-loader@1.6.7:
-    resolution: {integrity: sha512-//wB/fanbvxC3zPF8RNFNkljHMrzv2jT+BgE56LD07zPLaVFjdQiEWDFTQ1/q8+DOG2UID6JcgaHTXbPLQ4FSQ==}
+  /external-svg-loader@1.6.8:
+    resolution: {integrity: sha512-Akxa6cgSxi7pDm9A7XCXAVKUMZBAIC9EGgtxNKDJJ6MHpjq1TJBNfyKVOyQJOqYT9QNoxsNzYKlx/tbSUCgFeA==}
     requiresBuild: true
     dependencies:
+      cpr: 3.0.1
       cross-env: 7.0.3
       idb-keyval: 6.2.1
       npm-run-all: 4.1.5
@@ -9162,6 +9173,13 @@ packages:
     resolution: {integrity: sha512-gKLcREMhtuZRwRAfqP3RFW+TK4JqApVBtOIftVgjuABpAtpxhPGaDcfvbhNvD0B8iD1oUr/txX35NjcaY6Ns/A==}
     dev: false
 
+  /mkdirp@0.5.6:
+    resolution: {integrity: sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==}
+    hasBin: true
+    dependencies:
+      minimist: 1.2.8
+    dev: false
+
   /mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
     engines: {node: '>=4'}
@@ -10442,6 +10460,13 @@ packages:
   /reusify@1.0.4:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
+    dev: false
+
+  /rimraf@2.7.1:
+    resolution: {integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==}
+    hasBin: true
+    dependencies:
+      glob: 7.2.3
     dev: false
 
   /rollup-plugin-terser@7.0.2(rollup@2.79.1):
