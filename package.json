@@ -33,7 +33,7 @@
     "@types/react-dom": "18.2.6",
     "@vite-pwa/assets-generator": "^0.0.3",
     "@vite-pwa/astro": "^0.1.1",
-    "astro": "2.7.1",
+    "astro": "2.7.4",
     "astro-seo": "0.7.4",
     "external-svg-loader": "1.6.8",
     "marked": "5.1.0",
