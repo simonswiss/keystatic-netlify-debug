@@ -16,7 +16,6 @@ export const collections = {
         tags: z
           .array(z.object({ name: z.string(), slug: z.string() }))
           .optional(),
-        note: z.boolean().default(false),
       }),
   }),
   page: defineCollection({

@@ -50,7 +50,6 @@ export default defineConfig({
   },
   redirects: {
     '/esai': '/tags/esai',
-    '/note/og.png': '/og.png',
   },
   output: 'hybrid',
   adapter: netlify(),

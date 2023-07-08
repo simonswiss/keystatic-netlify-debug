@@ -4,13 +4,18 @@ import { getEntry } from 'astro:content'
 import { Image } from 'astro:assets'
 import { translate } from '~/lib/translate'
 import { parser } from '~/lib/marked'
+import ISO6391 from 'iso-639-1'
 import GTLogo from '~/assets/google-translate-logo.png'
 
-const { blog, lang } = Astro.params
-if (lang!.length > 2) {
-  return Astro.redirect(`${Astro.url.pathname}/en`)
+const { slug, lang } = Astro.params
+if (!slug || !lang) {
+  throw new Error('Something wrong')
 }
-const entry = await getEntry('blog', blog!.split('/').at(-1) as string)
+
+if (!ISO6391.validate(lang)) {
+  throw new Error('Undefined or invalid language code')
+}
+const entry = await getEntry('blog', slug)
 if (!entry) {
   return Astro.redirect('/404')
 }
