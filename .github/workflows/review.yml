@@ -7,21 +7,24 @@ permissions:
   contents: write
 
 jobs:
-  dependabot:
+  check:
     runs-on: ubuntu-latest
     if: ${{ github.actor != 'dependabot[bot]' }}
     steps:
-      # This first step will fail if there's no metadata and so the approval
-      # will not occur.
-      - name: Dependabot metadata
-        id: dependabot-metadata
-        uses: dependabot/fetch-metadata@v1.6.0
+      - name: Checkout your repository using git
+        uses: actions/checkout@v3
+      - name: Run checks
+        uses: radenpioneer/astro-check@v0
         with:
-          github-token: '${{ secrets.GITHUB_TOKEN }}'
+          check-command: 'check'
+  approve:
+    runs-on: ubuntu-latest
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    needs: ['check']
+    steps:
       # Here the PR gets approved.
       - name: Approve a PR
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
