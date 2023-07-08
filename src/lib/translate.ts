@@ -5,7 +5,7 @@ export const client = new v2.Translate({
   projectId: import.meta.env.GCP_PROJECT_ID,
   credentials: {
     client_email: import.meta.env.GCP_CLIENT_EMAIL,
-    private_key: import.meta.env.GCP_PRIVATE_KEY,
+    private_key: import.meta.env.GCP_PRIVATE_KEY.replace(/\\n/g, "\n"),
   },
 })
 
