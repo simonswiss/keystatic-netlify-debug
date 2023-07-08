@@ -49,9 +49,7 @@ export default defineConfig({
     '/esai': '/tags/esai',
   },
   output: 'hybrid',
-  adapter: netlify({
-    builders: true
-  }),
+  adapter: netlify(),
   vite: {
     plugins: [rawFonts(['.woff'])],
     optimizeDeps: {
