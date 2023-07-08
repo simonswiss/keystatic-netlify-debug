@@ -13,7 +13,7 @@ if (!slug || !lang) {
 }
 
 if (!ISO6391.validate(lang)) {
-  throw new Error('Undefined or invalid language code')
+  return Astro.redirect('/404')
 }
 const entry = await getEntry('blog', slug)
 if (!entry) {
