@@ -11,12 +11,9 @@ export const getStaticPaths = async () => {
 
   return content.map((entry) => ({
     params: {
-      blog: [
-        entry.data.note ? 'note' : 'blog',
-        new Date(entry.data.date).getFullYear(),
-        new Date(entry.data.date).toISOString().substring(5, 7),
-        entry.slug,
-      ].join('/'),
+      y: new Date(entry.data.date).getFullYear(),
+      m: new Date(entry.data.date).toISOString().substring(5, 7),
+      slug: entry.slug,
     },
     props: { entry },
   }))

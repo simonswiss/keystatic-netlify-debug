@@ -1,8 +1,17 @@
 import { marked } from 'marked'
 import { markedSmartypants } from 'marked-smartypants'
 
-export const parser = (text: string) => {
+export const parser = ({
+  text,
+  inline,
+}: {
+  text: string
+  inline?: boolean
+}) => {
   marked.use(markedSmartypants())
 
-  return marked.parseInline(text, { mangle: false, headerIds: false })
+  if (inline) {
+    return marked.parseInline(text, { mangle: false, headerIds: false })
+  }
+  return marked.parse(text, { mangle: false, headerIds: false })
 }

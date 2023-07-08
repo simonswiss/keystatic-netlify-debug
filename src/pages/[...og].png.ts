@@ -14,7 +14,7 @@ export const getStaticPaths = async () => {
   const contentParams = content.map((entry) => ({
     params: {
       og: [
-        entry.data.note ? 'note' : 'blog',
+        'blog',
         new Date(entry.data.date).getFullYear(),
         new Date(entry.data.date).toISOString().substring(5, 7),
         entry.slug,

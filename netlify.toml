@@ -2,10 +2,6 @@
   framework = "astro"
   autoLaunch = false
 
-[functions]
-  external_node_modules = ["@resvg/resvg-js", "@resvg/resvg-js-linux-x64-gnu"]
-  included_files = ["node_modules/@fontsource/plus-jakarta-sans/**/*"]
-
 [[headers]]
   for = "/manifest.webmanifest"
   [headers.values]

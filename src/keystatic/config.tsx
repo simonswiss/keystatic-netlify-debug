@@ -50,7 +50,6 @@ export default config({
           itemLabel: (props) => props.value.name,
         }),
         draft: fields.checkbox({ label: 'Draf', defaultValue: true }),
-        note: fields.checkbox({ label: 'Catatan', defaultValue: false }),
         content: fields.document({
           label: 'Konten',
           formatting: true,

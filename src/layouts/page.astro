@@ -5,9 +5,10 @@ import { parser } from '~/lib/marked'
 interface Props {
   title?: string
   description?: string
+  lang?: string
 }
 
-const { title, description } = Astro.props
+const { title, description, lang } = Astro.props
 ---
 
 <Layout title={title!} description={description!}>
@@ -15,14 +16,14 @@ const { title, description } = Astro.props
   <Fragment>
     <slot name="head" />
   </Fragment>
-  <article>
+  <article lang={lang || 'id'}>
     <!-- Heading -->
     <Fragment>
       {title && <h1 class="title">{title}</h1>}
       {
         description && (
           <p class="description">
-            <Fragment set:html={parser(description)} />
+            <Fragment set:html={parser({ text: description, inline: true })} />
           </p>
         )
       }

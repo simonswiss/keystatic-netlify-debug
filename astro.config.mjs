@@ -1,4 +1,4 @@
-import { defineConfig, sharpImageService } from 'astro/config'
+import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
@@ -45,12 +45,8 @@ export default defineConfig({
     assets: true,
     redirects: true,
   },
-  image: {
-    service: sharpImageService(),
-  },
   redirects: {
     '/esai': '/tags/esai',
-    '/note/og.png': '/og.png',
   },
   output: 'hybrid',
   adapter: netlify(),
