@@ -16,7 +16,10 @@ export const translate = async ({
   text: string[]
   target: string
 }) => {
-  const [translations] = await client.translate(text, target)
+  const [translations] = await client.translate(text, {
+    to: target,
+    format: 'html',
+  })
 
   return translations
 }
