@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref_name }}
       - name: Run checks
         uses: radenpioneer/astro-check@v0
         with:
