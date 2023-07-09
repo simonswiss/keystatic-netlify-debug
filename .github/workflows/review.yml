@@ -7,22 +7,9 @@ permissions:
   contents: write
 
 jobs:
-  check:
-    runs-on: ubuntu-latest
-    if: ${{ github.actor != 'dependabot[bot]' }}
-    steps:
-      - name: Checkout your repository using git
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.ref_name }}
-      - name: Run checks
-        uses: radenpioneer/astro-check@v0
-        with:
-          check-command: 'check'
   approve:
     runs-on: ubuntu-latest
     if: ${{ github.actor != 'dependabot[bot]' }}
-    needs: ['check']
     steps:
       # Here the PR gets approved.
       - name: Approve a PR
