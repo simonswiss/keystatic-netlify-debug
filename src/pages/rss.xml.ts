@@ -19,11 +19,7 @@ export const get = async () => {
       description:
         entry.data.description ||
         entry.body.match(/^(?!#|!|(?:<[^>]*>|&lt;[^&]*&gt;).*$|\s*$).*/m)?.[0],
-      link: getPostUrl(
-        entry.data.note ? '/note' : '/blog',
-        new Date(entry.data.date),
-        entry.slug
-      ),
+      link: getPostUrl('/blog', new Date(entry.data.date), entry.slug),
     })),
   })
 }
