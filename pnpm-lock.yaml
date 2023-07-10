@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -81,11 +81,11 @@ dependencies:
     specifier: ^2.1.15
     version: 2.1.15
   marked:
-    specifier: 5.1.0
-    version: 5.1.0
+    specifier: 5.1.1
+    version: 5.1.1
   marked-smartypants:
     specifier: 1.0.2
-    version: 1.0.2(marked@5.1.0)
+    version: 1.0.2(marked@5.1.1)
   postcss:
     specifier: 8.4.24
     version: 8.4.24
@@ -8182,12 +8182,12 @@ packages:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
     dev: false
 
-  /marked-smartypants@1.0.2(marked@5.1.0):
+  /marked-smartypants@1.0.2(marked@5.1.1):
     resolution: {integrity: sha512-hpbM9waiBSIHpqdoU5AAeuYozeObBwUet3xkCFrFBA+1329byRVxLDwYmelMCS3ss+sEVJhDgrunIy+ubiqFwQ==}
     peerDependencies:
       marked: ^4 || ^5
     dependencies:
-      marked: 5.1.0
+      marked: 5.1.1
       smartypants: 0.1.6
     dev: false
 
@@ -8197,8 +8197,8 @@ packages:
     hasBin: true
     dev: false
 
-  /marked@5.1.0:
-    resolution: {integrity: sha512-z3/nBe7aTI8JDszlYLk7dDVNpngjw0o1ZJtrA9kIfkkHcIF+xH7mO23aISl4WxP83elU+MFROgahqdpd05lMEQ==}
+  /marked@5.1.1:
+    resolution: {integrity: sha512-bTmmGdEINWmOMDjnPWDxGPQ4qkDLeYorpYbEtFOXzOruTwUE671q4Guiuchn4N8h/v6NGd7916kXsm3Iz4iUSg==}
     engines: {node: '>= 18'}
     hasBin: true
     dev: false
