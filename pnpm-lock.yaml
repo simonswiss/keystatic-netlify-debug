@@ -63,8 +63,8 @@ dependencies:
     specifier: 18.2.7
     version: 18.2.7
   '@vite-pwa/assets-generator':
-    specifier: ^0.0.3
-    version: 0.0.3
+    specifier: ^0.0.4
+    version: 0.0.4
   '@vite-pwa/astro':
     specifier: ^0.1.1
     version: 0.1.1(astro@2.8.0)(vite-plugin-pwa@0.16.4)
@@ -5046,8 +5046,8 @@ packages:
       - graphql
     dev: false
 
-  /@vite-pwa/assets-generator@0.0.3:
-    resolution: {integrity: sha512-rGjzFTGAZsY9fIf9qGbvXbo38Yj0MbAtTxAaL/GBlEU0+q/m6upw+4HKE58p2MnjUAOOBHf0871u3onHtkPWlQ==}
+  /@vite-pwa/assets-generator@0.0.4:
+    resolution: {integrity: sha512-zcJFI4i1tZ/GeChxFvrDMY+QzT2PkFS1AHIIWomYM5o75F3ENEF5mIlU6TLkKW5nqLDxeFB1NCTydKam8qV15A==}
     engines: {node: '>=16.14.0'}
     hasBin: true
     dependencies:
