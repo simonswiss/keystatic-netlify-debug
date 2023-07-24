@@ -54,8 +54,8 @@ dependencies:
     specifier: ^2.4.1
     version: 2.4.1
   '@types/marked':
-    specifier: 5.0.0
-    version: 5.0.0
+    specifier: 5.0.1
+    version: 5.0.1
   '@types/react':
     specifier: 18.2.14
     version: 18.2.14
@@ -4900,8 +4900,8 @@ packages:
       '@types/mdurl': 1.0.2
     dev: false
 
-  /@types/marked@5.0.0:
-    resolution: {integrity: sha512-YcZe50jhltsCq7rc9MNZC/4QB/OnA2Pd6hrOSTOFajtabN+38slqgDDCeE/0F83SjkKBQcsZUj7VLWR0H5cKRA==}
+  /@types/marked@5.0.1:
+    resolution: {integrity: sha512-Y3pAUzHKh605fN6fvASsz5FDSWbZcs/65Q6xYRmnIP9ZIYz27T4IOmXfH9gWJV1dpi7f1e7z7nBGUTx/a0ptpA==}
     dev: false
 
   /@types/mdast@3.0.11:
