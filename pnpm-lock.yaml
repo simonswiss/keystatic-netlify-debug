@@ -7,13 +7,13 @@ settings:
 dependencies:
   '@astrojs/markdoc':
     specifier: 0.4.1
-    version: 0.4.1(@types/react@18.2.14)(astro@2.8.0)(react@18.2.0)
+    version: 0.4.1(@types/react@18.2.14)(astro@2.9.1)(react@18.2.0)
   '@astrojs/mdx':
     specifier: 0.19.7
-    version: 0.19.7(astro@2.8.0)
+    version: 0.19.7(astro@2.9.1)
   '@astrojs/netlify':
     specifier: 2.3.0
-    version: 2.3.0(astro@2.8.0)
+    version: 2.3.0(astro@2.9.1)
   '@astrojs/react':
     specifier: 2.2.1
     version: 2.2.1(@types/react-dom@18.2.7)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
@@ -34,7 +34,7 @@ dependencies:
     version: 7.2.2
   '@keystatic/astro':
     specifier: 0.0.8
-    version: 0.0.8(@keystatic/core@0.0.109)(astro@2.8.0)(react-dom@18.2.0)(react@18.2.0)
+    version: 0.0.8(@keystatic/core@0.0.109)(astro@2.9.1)(react-dom@18.2.0)(react@18.2.0)
   '@keystatic/core':
     specifier: 0.0.109
     version: 0.0.109(react-dom@18.2.0)(react@18.2.0)
@@ -67,10 +67,10 @@ dependencies:
     version: 0.0.4
   '@vite-pwa/astro':
     specifier: ^0.1.1
-    version: 0.1.1(astro@2.8.0)(vite-plugin-pwa@0.16.4)
+    version: 0.1.1(astro@2.9.1)(vite-plugin-pwa@0.16.4)
   astro:
-    specifier: 2.8.0
-    version: 2.8.0(sass@1.63.6)(sharp@0.32.3)
+    specifier: 2.9.1
+    version: 2.9.1(sass@1.63.6)(sharp@0.32.3)
   astro-seo:
     specifier: 0.7.5
     version: 0.7.5
@@ -178,8 +178,8 @@ packages:
       leven: 3.1.0
     dev: false
 
-  /@astrojs/compiler@1.5.4:
-    resolution: {integrity: sha512-Muk0Nr1Yp2KQ9cwPBKiw+YbTHYGT8ag4RXV+P+4d2nkO2iya46nONzvH4Yv8S/sldL2ij17HGxFMmlPAxaSr6A==}
+  /@astrojs/compiler@1.6.1:
+    resolution: {integrity: sha512-QZZhV2kOhvyXEfpaGLgHWNPUOlkMVx3Zw+5IlXXU2p448NwtyYt3C6MuS7baVsTlluH3EedAoDBmelt9hPhfiQ==}
     dev: false
 
   /@astrojs/internal-helpers@0.1.1:
@@ -190,7 +190,7 @@ packages:
     resolution: {integrity: sha512-gssRxLGb8XnvKpqSzrDW5jdzdFnXD7eBXVkPCkkt2hv7Qzb+SAzv6hVgMok3jDCxpR1aeB+XNd9Qszj2h29iog==}
     hasBin: true
     dependencies:
-      '@astrojs/compiler': 1.5.4
+      '@astrojs/compiler': 1.6.1
       '@jridgewell/trace-mapping': 0.3.18
       '@vscode/emmet-helper': 2.9.2
       events: 3.3.0
@@ -205,7 +205,7 @@ packages:
       vscode-uri: 3.0.7
     dev: false
 
-  /@astrojs/markdoc@0.4.1(@types/react@18.2.14)(astro@2.8.0)(react@18.2.0):
+  /@astrojs/markdoc@0.4.1(@types/react@18.2.14)(astro@2.9.1)(react@18.2.0):
     resolution: {integrity: sha512-vJz/tEQQ1Fjb9y9JaFCF7ioa2jTQ3svDBci1Vj7yh+RHWJQzP727A6TsPm0GDkX0FS3JMegZ/ZkCf1GWImhVZw==}
     engines: {node: '>=16.12.0'}
     peerDependencies:
@@ -214,7 +214,7 @@ packages:
       '@astrojs/internal-helpers': 0.1.1
       '@astrojs/prism': 2.1.2
       '@markdoc/markdoc': 0.3.0(@types/react@18.2.14)(react@18.2.0)
-      astro: 2.8.0(sass@1.63.6)(sharp@0.32.3)
+      astro: 2.9.1(sass@1.63.6)(sharp@0.32.3)
       esbuild: 0.17.19
       github-slugger: 2.0.0
       gray-matter: 4.0.3
@@ -226,13 +226,13 @@ packages:
       - react
     dev: false
 
-  /@astrojs/markdown-remark@2.2.1(astro@2.8.0):
+  /@astrojs/markdown-remark@2.2.1(astro@2.9.1):
     resolution: {integrity: sha512-VF0HRv4GpC1XEMLnsKf6jth7JSmlt9qpqP0josQgA2eSpCIAC/Et+y94mgdBIZVBYH/yFnMoIxgKVe93xfO2GA==}
     peerDependencies:
       astro: ^2.5.0
     dependencies:
       '@astrojs/prism': 2.1.2
-      astro: 2.8.0(sass@1.63.6)(sharp@0.32.3)
+      astro: 2.9.1(sass@1.63.6)(sharp@0.32.3)
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.2
       rehype-raw: 6.1.1
@@ -249,11 +249,11 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/mdx@0.19.7(astro@2.8.0):
+  /@astrojs/mdx@0.19.7(astro@2.9.1):
     resolution: {integrity: sha512-mfEbBD7oi8yBHhcJucEjnrquREkJ3os+jioURP8BR2B8tOV2rV2j8trvmLUgfS+P/+HevGObxCTjcRYxn6T7eg==}
     engines: {node: '>=16.12.0'}
     dependencies:
-      '@astrojs/markdown-remark': 2.2.1(astro@2.8.0)
+      '@astrojs/markdown-remark': 2.2.1(astro@2.9.1)
       '@astrojs/prism': 2.1.2
       '@mdx-js/mdx': 2.3.0
       acorn: 8.10.0
@@ -276,7 +276,7 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/netlify@2.3.0(astro@2.8.0):
+  /@astrojs/netlify@2.3.0(astro@2.9.1):
     resolution: {integrity: sha512-gd9Ij4IYKnzbtwdQntknorWI/2oWSlfYnS7WoFUetLgYZzWsPw9WYa3dIiL1YofQcNSByik/1Asf6uZofG+xHA==}
     peerDependencies:
       astro: ^2.6.0
@@ -284,7 +284,7 @@ packages:
       '@astrojs/underscore-redirects': 0.1.0
       '@astrojs/webapi': 2.2.0
       '@netlify/functions': 1.6.0
-      astro: 2.8.0(sass@1.63.6)(sharp@0.32.3)
+      astro: 2.9.1(sass@1.63.6)(sharp@0.32.3)
       esbuild: 0.15.18
     dev: false
 
@@ -2603,7 +2603,7 @@ packages:
       react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
-  /@keystatic/astro@0.0.8(@keystatic/core@0.0.109)(astro@2.8.0)(react-dom@18.2.0)(react@18.2.0):
+  /@keystatic/astro@0.0.8(@keystatic/core@0.0.109)(astro@2.9.1)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-jn1JUWJsczsq1VkK3lOsjjVJ7e/cWWAkuYN1kJAbtAlJPtmlwESYfxPWYCbDrWADeNA2CEvU6H9AzN5GQrO2oQ==}
     peerDependencies:
       '@keystatic/core': '*'
@@ -2614,7 +2614,7 @@ packages:
       '@babel/runtime': 7.22.6
       '@keystatic/core': 0.0.109(react-dom@18.2.0)(react@18.2.0)
       '@types/react': 18.2.14
-      astro: 2.8.0(sass@1.63.6)(sharp@0.32.3)
+      astro: 2.9.1(sass@1.63.6)(sharp@0.32.3)
       cookie: 0.5.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -4827,6 +4827,10 @@ packages:
       '@types/ms': 0.7.31
     dev: false
 
+  /@types/dom-view-transitions@1.0.1:
+    resolution: {integrity: sha512-A9S1ijj/4MX06I1W/6on8lhaYyq1Ir7gaOvfllW1o4RzVWW88HAeqX0pUx9VgOLnNpdiGeUW2CTkg18p5LWIrA==}
+    dev: false
+
   /@types/eslint-scope@3.7.4:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
@@ -5059,13 +5063,13 @@ packages:
       unconfig: 0.3.9
     dev: false
 
-  /@vite-pwa/astro@0.1.1(astro@2.8.0)(vite-plugin-pwa@0.16.4):
+  /@vite-pwa/astro@0.1.1(astro@2.9.1)(vite-plugin-pwa@0.16.4):
     resolution: {integrity: sha512-ZImC5fFMekgXyyCEsed5y6R9srFhNfFqwNrOhpi9klOn0nju1eCwHKGodJGK9B4gjxZo35dc5lS5FHFinTOBcw==}
     peerDependencies:
       astro: ^1.6.0 || ^2.0.0
       vite-plugin-pwa: '>=0.16.3 <1'
     dependencies:
-      astro: 2.8.0(sass@1.63.6)(sharp@0.32.3)
+      astro: 2.9.1(sass@1.63.6)(sharp@0.32.3)
       vite-plugin-pwa: 0.16.4(vite@4.3.9)(workbox-build@7.0.0)(workbox-window@7.0.0)
     dev: false
 
@@ -5394,8 +5398,8 @@ packages:
     resolution: {integrity: sha512-bo5PiB4Y30PP9QS6OnYcVOr1fKDE52mvJys/3HgeiM2h+/hS7jESUHZMx6VX7yRid1yMGHsp2OyVTA9DrdPyPg==}
     dev: false
 
-  /astro@2.8.0(sass@1.63.6)(sharp@0.32.3):
-    resolution: {integrity: sha512-bqdhE9039dzi0mqaWGO9rMk5HKxTn5TckxFmRPUdsV1qmbpghXtwuERHblfJu5etQofV6WVEyTrouG+BLRkqfA==}
+  /astro@2.9.1(sass@1.63.6)(sharp@0.32.3):
+    resolution: {integrity: sha512-cY+ilz7zbKx21QA4LRJtE49NakkhUVh6kU9LqNMThz/Fqv1Rkz0uJBWIUJfJqpOmqnpFEW2G245gF4+bUA7aRQ==}
     engines: {node: '>=16.12.0', npm: '>=6.14.0'}
     hasBin: true
     peerDependencies:
@@ -5404,10 +5408,10 @@ packages:
       sharp:
         optional: true
     dependencies:
-      '@astrojs/compiler': 1.5.4
+      '@astrojs/compiler': 1.6.1
       '@astrojs/internal-helpers': 0.1.1
       '@astrojs/language-server': 1.0.8
-      '@astrojs/markdown-remark': 2.2.1(astro@2.8.0)
+      '@astrojs/markdown-remark': 2.2.1(astro@2.9.1)
       '@astrojs/telemetry': 2.1.1
       '@astrojs/webapi': 2.2.0
       '@babel/core': 7.22.6
@@ -5417,6 +5421,7 @@ packages:
       '@babel/traverse': 7.22.6
       '@babel/types': 7.22.5
       '@types/babel__core': 7.20.1
+      '@types/dom-view-transitions': 1.0.1
       '@types/yargs-parser': 21.0.0
       acorn: 8.10.0
       boxen: 6.2.1
@@ -5440,13 +5445,14 @@ packages:
       kleur: 4.1.5
       magic-string: 0.27.0
       mime: 3.0.0
+      network-information-types: 0.1.1(typescript@5.1.6)
       ora: 6.3.1
       p-limit: 4.0.0
       path-to-regexp: 6.2.1
       preferred-pm: 3.0.3
       prompts: 2.4.2
       rehype: 12.0.1
-      semver: 7.5.3
+      semver: 7.5.4
       server-destroy: 1.0.1
       sharp: 0.32.3
       shiki: 0.14.3
@@ -8959,6 +8965,14 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: false
 
+  /network-information-types@0.1.1(typescript@5.1.6):
+    resolution: {integrity: sha512-mLXNafJYOkiJB6IlF727YWssTRpXitR+tKSLyA5VAdBi3SOvLf5gtizHgxf241YHPWocnAO/fAhVrB/68tPHDw==}
+    peerDependencies:
+      typescript: '>= 3.0.0'
+    dependencies:
+      typescript: 5.1.6
+    dev: false
+
   /nice-try@1.0.5:
     resolution: {integrity: sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==}
     dev: false
@@ -9726,7 +9740,7 @@ packages:
     resolution: {integrity: sha512-pYZXSbdq0eElvzoIMArzv1SBn1NUXzopjlcnt6Ql8VW32PjC12NovwBjXJ6rh8qQLi7vF8jNqAbraKW03UPfag==}
     engines: {node: ^14.15.0 || >=16.0.0, pnpm: '>=7.14.0'}
     dependencies:
-      '@astrojs/compiler': 1.5.4
+      '@astrojs/compiler': 1.6.1
       prettier: 2.8.8
       sass-formatter: 0.7.6
       synckit: 0.8.5
@@ -10483,14 +10497,6 @@ packages:
   /semver@5.7.1:
     resolution: {integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==}
     hasBin: true
-    dev: false
-
-  /semver@7.5.3:
-    resolution: {integrity: sha512-QBlUtyVk/5EeHbi7X0fw6liDZc7BBmEaSYn01fMU1OUYbf6GPsbTtd8WmnqbI20SeycoHSeiybkE/q1Q+qlThQ==}
-    engines: {node: '>=10'}
-    hasBin: true
-    dependencies:
-      lru-cache: 6.0.0
     dev: false
 
   /semver@7.5.4:
