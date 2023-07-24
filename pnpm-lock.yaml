@@ -27,8 +27,8 @@ dependencies:
     specifier: 5.0.6
     version: 5.0.6
   '@fontsource/plus-jakarta-sans':
-    specifier: ^5.0.4
-    version: 5.0.4
+    specifier: ^5.0.5
+    version: 5.0.5
   '@google-cloud/translate':
     specifier: ^7.2.2
     version: 7.2.2
@@ -2278,8 +2278,8 @@ packages:
     resolution: {integrity: sha512-gyDw8qwzQA0Eks+04gjZcfm6GvMZVekPaY73E2OT6c7vN+u8n3Y2VfEMz235RModtBMYx2cmpj2i7CTMMbNXYA==}
     dev: false
 
-  /@fontsource/plus-jakarta-sans@5.0.4:
-    resolution: {integrity: sha512-0dfHplRYc91beLvZItcgrZbHVVC0atsawo1bwXBv0dN7IWkMXyEqsPk2CyyvoPSo1r2635ciZRdtsBE7/Ibmtg==}
+  /@fontsource/plus-jakarta-sans@5.0.5:
+    resolution: {integrity: sha512-zcj9lGqmjXcyTuhfy/XMtOs7AfKS1gp28rbvURI1KIhKkcWD+5wQa+T2WQtaHZy7pfe3bDp4wuUl2ux30DIR9g==}
     dev: false
 
   /@formatjs/ecma402-abstract@1.17.0:
