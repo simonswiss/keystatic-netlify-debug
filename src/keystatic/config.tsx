@@ -20,7 +20,7 @@ export default config({
         image: fields.image({
           label: 'Gambar',
           directory: 'src/assets/uploads/site',
-          publicPath: 'src/assets/uploads/site',
+          publicPath: '~/assets/uploads/site',
         }),
         menu: fields.array(fields.slug({ name: { label: 'Menu' } }), {
           label: 'Tautan',
@@ -42,7 +42,7 @@ export default config({
         image: fields.image({
           label: 'Gambar Cover',
           directory: 'src/assets/uploads/blog',
-          publicPath: 'src/assets/uploads/blog/',
+          publicPath: '~/assets/uploads/blog/',
         }),
         date: fields.date({ label: 'Tanggal Terbit' }),
         tags: fields.array(fields.slug({ name: { label: 'Tag' } }), {
@@ -58,7 +58,7 @@ export default config({
           tables: true,
           images: {
             directory: 'src/assets/uploads/blog',
-            publicPath: 'src/assets/uploads/blog/',
+            publicPath: '~/assets/uploads/blog/',
           },
         }),
       },
@@ -74,7 +74,7 @@ export default config({
         image: fields.image({
           label: 'Gambar Cover',
           directory: 'src/assets/uploads/page',
-          publicPath: 'src/assets/uploads/page/',
+          publicPath: '~/assets/uploads/page/',
         }),
         draft: fields.checkbox({ label: 'Draf', defaultValue: true }),
         content: fields.document({
@@ -85,7 +85,7 @@ export default config({
           tables: true,
           images: {
             directory: 'src/assets/uploads/page',
-            publicPath: 'src/assets/uploads/page/',
+            publicPath: '~/assets/uploads/page/',
           },
         }),
       },
