@@ -43,7 +43,6 @@ export default defineConfig({
   ],
   experimental: {
     assets: true,
-    redirects: true,
   },
   redirects: {
     '/esai': '/tags/esai',

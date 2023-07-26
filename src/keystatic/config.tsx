@@ -57,8 +57,8 @@ export default config({
           dividers: true,
           tables: true,
           images: {
-            directory: 'public/uploads/blog',
-            publicPath: 'uploads/blog/',
+            directory: 'src/assets/uploads/blog',
+            publicPath: 'src/assets/uploads/blog/',
           },
         }),
       },
@@ -84,8 +84,8 @@ export default config({
           dividers: true,
           tables: true,
           images: {
-            directory: 'public/uploads/page',
-            publicPath: '/uploads/page/',
+            directory: 'src/assets/uploads/page',
+            publicPath: 'src/assets/uploads/page/',
           },
         }),
       },
