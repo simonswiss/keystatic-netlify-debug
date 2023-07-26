@@ -1,9 +1,9 @@
 import { clientsClaim } from 'workbox-core'
-import { registerRoute } from 'workbox-routing'
+import { registerRoute, NavigationRoute } from 'workbox-routing'
 import { CacheFirst } from 'workbox-strategies'
 import { CacheableResponsePlugin } from 'workbox-cacheable-response'
 import { ExpirationPlugin } from 'workbox-expiration'
-import { precacheAndRoute } from 'workbox-precaching'
+import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching'
 import {
   pageCache,
   imageCache,
@@ -17,6 +17,8 @@ declare let self: ServiceWorkerGlobalScope
 precacheAndRoute(self.__WB_MANIFEST)
 self.skipWaiting()
 clientsClaim()
+
+registerRoute(new NavigationRoute(createHandlerBoundToURL('/404')))
 
 warmStrategyCache({
   urls: ['/index.html', '/offline/index.html'],
