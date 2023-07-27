@@ -4,8 +4,8 @@ export default config({
   storage: {
     kind: 'github',
     repo: {
-      owner: 'radenpioneer',
-      name: 'radenpioneer.blog',
+      owner: 'simonswiss',
+      name: 'keystatic-netlify-debug',
     },
   },
 
