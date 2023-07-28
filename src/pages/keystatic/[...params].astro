@@ -6,9 +6,9 @@ import { Keystatic } from '~/keystatic/page'
 
 const site = await getEntry('site', 'site')
 
-if (import.meta.env.NETLIFY) {
-  return Astro.redirect('/')
-}
+// if (import.meta.env.NETLIFY) {
+//   return Astro.redirect('/')
+// }
 
 export const prerender = false
 ---
