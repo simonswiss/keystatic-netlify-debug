@@ -10,7 +10,7 @@ const site = await getEntry('site', 'site')
 //   return Astro.redirect('/')
 // }
 
-export const prerender = false
+// export const prerender = false
 ---
 
 <BaseLayout>
@@ -22,5 +22,6 @@ export const prerender = false
       nofollow={true}
     />
   </Fragment>
-  <Keystatic client:only />
+  <p>Hello world!</p>
+  <!-- <Keystatic client:only /> -->
 </BaseLayout>
