@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -34,10 +34,10 @@ dependencies:
     version: 7.2.2
   '@keystatic/astro':
     specifier: 0.0.8
-    version: 0.0.8(@keystatic/core@0.0.112)(astro@2.9.2)(react-dom@18.2.0)(react@18.2.0)
+    version: 0.0.8(@keystatic/core@0.0.114)(astro@2.9.2)(react-dom@18.2.0)(react@18.2.0)
   '@keystatic/core':
-    specifier: 0.0.112
-    version: 0.0.112(react-dom@18.2.0)(react@18.2.0)
+    specifier: 0.0.114
+    version: 0.0.114(react-dom@18.2.0)(react@18.2.0)
   '@picocss/pico':
     specifier: 1.5.10
     version: 1.5.10
@@ -2670,8 +2670,8 @@ packages:
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
     dev: false
 
-  /@keystar/ui@0.1.5(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-0n2gEXo96KKOzCu4DG8KXtUxDty1MTCa1RglecxUTVOI6z1dk2nP+1jZfE123Pms33iLvCo0P4Z7LZm2wtsM4Q==}
+  /@keystar/ui@0.1.7(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Wvphccp3i8w+L8CVucdreVlGq/M19OKZ6dd9hEOKqwBUad0fZp3rNAhpqdWOMQDx0/O+kMkazhN5ULRJ3RH1fA==}
     peerDependencies:
       next: '13'
       react: ^18.2.0
@@ -2765,7 +2765,7 @@ packages:
       react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
-  /@keystatic/astro@0.0.8(@keystatic/core@0.0.112)(astro@2.9.2)(react-dom@18.2.0)(react@18.2.0):
+  /@keystatic/astro@0.0.8(@keystatic/core@0.0.114)(astro@2.9.2)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-jn1JUWJsczsq1VkK3lOsjjVJ7e/cWWAkuYN1kJAbtAlJPtmlwESYfxPWYCbDrWADeNA2CEvU6H9AzN5GQrO2oQ==}
     peerDependencies:
       '@keystatic/core': '*'
@@ -2774,7 +2774,7 @@ packages:
       react-dom: ^18.2.0
     dependencies:
       '@babel/runtime': 7.22.6
-      '@keystatic/core': 0.0.112(react-dom@18.2.0)(react@18.2.0)
+      '@keystatic/core': 0.0.114(react-dom@18.2.0)(react@18.2.0)
       '@types/react': 18.2.15
       astro: 2.9.2(sass@1.64.1)(sharp@0.32.4)
       cookie: 0.5.0
@@ -2784,8 +2784,8 @@ packages:
       set-cookie-parser: 2.6.0
     dev: false
 
-  /@keystatic/core@0.0.112(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-3BkxmKDyorhUiWzapeGuFpwwJIhcs5EFJklWfdad8fSLRiV7/ydZX5ri1u35epgi4KE6to/WQI7fZJAkoHX3IA==}
+  /@keystatic/core@0.0.114(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-fZUbt6bEmEi5BYE6cKrglXGqiTuvrYgMJszMNG9YGxhtxyt7e2fPEfOjHyiXyehNiossk9N5kR2At0ZQLVv0bg==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -2797,7 +2797,7 @@ packages:
       '@floating-ui/react': 0.24.8(react-dom@18.2.0)(react@18.2.0)
       '@hapi/iron': 7.0.1
       '@internationalized/string': 3.1.1
-      '@keystar/ui': 0.1.5(react-dom@18.2.0)(react@18.2.0)
+      '@keystar/ui': 0.1.7(react-dom@18.2.0)(react@18.2.0)
       '@markdoc/markdoc': 0.3.0(@types/react@18.2.15)(react@18.2.0)
       '@react-aria/focus': 3.13.0(react@18.2.0)
       '@react-aria/i18n': 3.8.0(react@18.2.0)
@@ -2850,7 +2850,6 @@ packages:
       prosemirror-view: 1.31.6
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      react-resizable-panels: 0.0.53(react-dom@18.2.0)(react@18.2.0)
       scroll-into-view-if-needed: 3.0.10
       slate: 0.91.4
       slate-history: 0.86.0(slate@0.91.4)
@@ -5153,7 +5152,7 @@ packages:
   /@types/sax@1.2.4:
     resolution: {integrity: sha512-pSAff4IAxJjfAXUG6tFkO7dsSbTmf8CtUpfhhZ5VhkRpC4628tJhh3+V6H1E+/Gs9piSzYKT5yzHO5M4GG9jkw==}
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 20.4.3
     dev: false
 
   /@types/scheduler@0.16.3:
@@ -10197,16 +10196,6 @@ packages:
       tslib: 2.6.0
       use-callback-ref: 1.3.0(@types/react@18.2.15)(react@18.2.0)
       use-sidecar: 1.1.2(@types/react@18.2.15)(react@18.2.0)
-    dev: false
-
-  /react-resizable-panels@0.0.53(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-lGOJF0Hh5+Y+Usi7x8btmBTi+6CQV1/RKxnj6jVrzvJ9vLbftbSoJPzymOuX8ZCFimlEwP2AKsGtQVKG/KieHA==}
-    peerDependencies:
-      react: ^16.14.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.14.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /react-router-dom@6.14.2(react-dom@18.2.0)(react@18.2.0):
